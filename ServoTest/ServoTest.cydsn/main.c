@@ -6,6 +6,7 @@
  *
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
+ * Kristian Gaardsted Bork
  *
  * ========================================
 */
