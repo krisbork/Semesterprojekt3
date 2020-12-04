@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f2ef3ebc-34ce-4627-9bd0-8247ea5dd223
+\\Mac\Home\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|31640530-e90c-4eb6-af97-b9f4e5a611b6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|5b668287-b177-45bb-83ec-0610f7525600
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b83fcb9b-9158-4906-a096-4e5e2d312259
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|8f171dca-0690-4bc8-ba78-a72b53a6250e
+\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\BilProjekt.cyprj|3f4aa0ff-9dac-4fc0-a62a-7a552738dba5
