@@ -1,0 +1,7 @@
+\\Mac\Home\Documents\Projekt\Ultrasonic\Ultrasonic1sensor.cydsn\Ultrasonic1sensor.cyprj|8f7f1fbf-b272-4baa-97c2-2ec840d3d274
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f22fffc8-9ac3-4dc0-84e4-58608af839b1
+\\Mac\Home\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|d919d551-9e37-46b5-bb98-9615d9c559f0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|07356fd4-f19a-499f-8afb-bbc7a34a5aab
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|dc3d3017-b66b-4a3f-91d6-23c5db5c1393
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|a1a1db0e-8b54-4ea4-9c57-5c2bbbb37f4f
+\\Mac\Home\Documents\Projekt\Ultrasonic\Ultrasonic4sensor.cydsn\Ultrasonic4sensor.cyprj|48e91768-d140-4850-a026-27d16b2b6558

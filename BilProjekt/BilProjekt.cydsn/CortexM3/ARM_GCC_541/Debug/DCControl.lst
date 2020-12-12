@@ -1,0 +1,1067 @@
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"DCControl.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.driveForwards,"ax",%progbits
+  20              		.align	2
+  21              		.global	driveForwards
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	driveForwards, %function
+  25              	driveForwards:
+  26              	.LFB63:
+  27              		.file 1 "DCControl.c"
+   1:DCControl.c   **** /* ========================================
+   2:DCControl.c   ****  *
+   3:DCControl.c   ****  * Copyright YOUR COMPANY, THE YEAR
+   4:DCControl.c   ****  * All Rights Reserved
+   5:DCControl.c   ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:DCControl.c   ****  *
+   7:DCControl.c   ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:DCControl.c   ****  * WHICH IS THE PROPERTY OF your company.
+   9:DCControl.c   ****  *
+  10:DCControl.c   ****  * ========================================
+  11:DCControl.c   **** */
+  12:DCControl.c   **** 
+  13:DCControl.c   **** #include "project.h"
+  14:DCControl.c   **** #include "DCControl.h"
+  15:DCControl.c   **** #include <stdint.h>
+  16:DCControl.c   **** 
+  17:DCControl.c   **** uint8_t compare = 20;
+  18:DCControl.c   **** 
+  19:DCControl.c   **** void driveForwards()
+  20:DCControl.c   **** {
+  28              		.loc 1 20 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  21:DCControl.c   ****     UART_1_PutString("Set direction: forwards\r\n");
+  36              		.loc 1 21 0
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 2
+
+
+  37 0002 0748     		ldr	r0, .L3
+  38 0004 FFF7FEFF 		bl	UART_1_PutString
+  39              	.LVL0:
+  22:DCControl.c   ****     PWM_DC_WriteCompare(compare);
+  40              		.loc 1 22 0
+  41 0008 064B     		ldr	r3, .L3+4
+  42 000a 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+  43 000c FFF7FEFF 		bl	PWM_DC_WriteCompare
+  44              	.LVL1:
+  23:DCControl.c   ****     Pin_1_7_Write(0);
+  45              		.loc 1 23 0
+  46 0010 0020     		movs	r0, #0
+  47 0012 FFF7FEFF 		bl	Pin_1_7_Write
+  48              	.LVL2:
+  24:DCControl.c   ****     Pin_1_6_Write(1);
+  49              		.loc 1 24 0
+  50 0016 0120     		movs	r0, #1
+  51 0018 FFF7FEFF 		bl	Pin_1_6_Write
+  52              	.LVL3:
+  53 001c 08BD     		pop	{r3, pc}
+  54              	.L4:
+  55 001e 00BF     		.align	2
+  56              	.L3:
+  57 0020 00000000 		.word	.LC0
+  58 0024 00000000 		.word	.LANCHOR0
+  59              		.cfi_endproc
+  60              	.LFE63:
+  61              		.size	driveForwards, .-driveForwards
+  62              		.section	.text.driveBackwards,"ax",%progbits
+  63              		.align	2
+  64              		.global	driveBackwards
+  65              		.thumb
+  66              		.thumb_func
+  67              		.type	driveBackwards, %function
+  68              	driveBackwards:
+  69              	.LFB64:
+  25:DCControl.c   **** }
+  26:DCControl.c   **** 
+  27:DCControl.c   **** void driveBackwards()
+  28:DCControl.c   **** {
+  70              		.loc 1 28 0
+  71              		.cfi_startproc
+  72              		@ args = 0, pretend = 0, frame = 0
+  73              		@ frame_needed = 0, uses_anonymous_args = 0
+  74 0000 08B5     		push	{r3, lr}
+  75              		.cfi_def_cfa_offset 8
+  76              		.cfi_offset 3, -8
+  77              		.cfi_offset 14, -4
+  29:DCControl.c   ****     UART_1_PutString("Set direction: backwards\r\n");
+  78              		.loc 1 29 0
+  79 0002 0748     		ldr	r0, .L7
+  80 0004 FFF7FEFF 		bl	UART_1_PutString
+  81              	.LVL4:
+  30:DCControl.c   ****     PWM_DC_WriteCompare(compare);
+  82              		.loc 1 30 0
+  83 0008 064B     		ldr	r3, .L7+4
+  84 000a 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 3
+
+
+  85 000c FFF7FEFF 		bl	PWM_DC_WriteCompare
+  86              	.LVL5:
+  31:DCControl.c   ****     Pin_1_7_Write(1);
+  87              		.loc 1 31 0
+  88 0010 0120     		movs	r0, #1
+  89 0012 FFF7FEFF 		bl	Pin_1_7_Write
+  90              	.LVL6:
+  32:DCControl.c   ****     Pin_1_6_Write(0);
+  91              		.loc 1 32 0
+  92 0016 0020     		movs	r0, #0
+  93 0018 FFF7FEFF 		bl	Pin_1_6_Write
+  94              	.LVL7:
+  95 001c 08BD     		pop	{r3, pc}
+  96              	.L8:
+  97 001e 00BF     		.align	2
+  98              	.L7:
+  99 0020 1C000000 		.word	.LC1
+ 100 0024 00000000 		.word	.LANCHOR0
+ 101              		.cfi_endproc
+ 102              	.LFE64:
+ 103              		.size	driveBackwards, .-driveBackwards
+ 104              		.section	.text.stopDriving,"ax",%progbits
+ 105              		.align	2
+ 106              		.global	stopDriving
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.type	stopDriving, %function
+ 110              	stopDriving:
+ 111              	.LFB65:
+  33:DCControl.c   **** }
+  34:DCControl.c   **** 
+  35:DCControl.c   **** void stopDriving()
+  36:DCControl.c   **** {
+ 112              		.loc 1 36 0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116 0000 08B5     		push	{r3, lr}
+ 117              		.cfi_def_cfa_offset 8
+ 118              		.cfi_offset 3, -8
+ 119              		.cfi_offset 14, -4
+  37:DCControl.c   ****     UART_1_PutString("Stop\r\n");
+ 120              		.loc 1 37 0
+ 121 0002 0548     		ldr	r0, .L11
+ 122 0004 FFF7FEFF 		bl	UART_1_PutString
+ 123              	.LVL8:
+  38:DCControl.c   ****     Pin_1_7_Write(0);
+ 124              		.loc 1 38 0
+ 125 0008 0020     		movs	r0, #0
+ 126 000a FFF7FEFF 		bl	Pin_1_7_Write
+ 127              	.LVL9:
+  39:DCControl.c   ****     Pin_1_6_Write(0);
+ 128              		.loc 1 39 0
+ 129 000e 0020     		movs	r0, #0
+ 130 0010 FFF7FEFF 		bl	Pin_1_6_Write
+ 131              	.LVL10:
+ 132 0014 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 4
+
+
+ 133              	.L12:
+ 134 0016 00BF     		.align	2
+ 135              	.L11:
+ 136 0018 38000000 		.word	.LC2
+ 137              		.cfi_endproc
+ 138              	.LFE65:
+ 139              		.size	stopDriving, .-stopDriving
+ 140              		.section	.text.decreaseSpeed,"ax",%progbits
+ 141              		.align	2
+ 142              		.global	decreaseSpeed
+ 143              		.thumb
+ 144              		.thumb_func
+ 145              		.type	decreaseSpeed, %function
+ 146              	decreaseSpeed:
+ 147              	.LFB66:
+  40:DCControl.c   **** }
+  41:DCControl.c   **** 
+  42:DCControl.c   **** void decreaseSpeed()
+  43:DCControl.c   **** {
+ 148              		.loc 1 43 0
+ 149              		.cfi_startproc
+ 150              		@ args = 0, pretend = 0, frame = 0
+ 151              		@ frame_needed = 0, uses_anonymous_args = 0
+ 152 0000 08B5     		push	{r3, lr}
+ 153              		.cfi_def_cfa_offset 8
+ 154              		.cfi_offset 3, -8
+ 155              		.cfi_offset 14, -4
+  44:DCControl.c   ****     UART_1_PutString("Decreasing speed\r\n");
+ 156              		.loc 1 44 0
+ 157 0002 0648     		ldr	r0, .L16
+ 158 0004 FFF7FEFF 		bl	UART_1_PutString
+ 159              	.LVL11:
+  45:DCControl.c   ****     if(compare > 0) 
+ 160              		.loc 1 45 0
+ 161 0008 054B     		ldr	r3, .L16+4
+ 162 000a 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 163 000c 20B1     		cbz	r0, .L13
+  46:DCControl.c   ****     {
+  47:DCControl.c   ****         compare -= 2;
+ 164              		.loc 1 47 0
+ 165 000e 0238     		subs	r0, r0, #2
+ 166 0010 C0B2     		uxtb	r0, r0
+ 167 0012 1870     		strb	r0, [r3]
+  48:DCControl.c   ****         PWM_DC_WriteCompare(compare);
+ 168              		.loc 1 48 0
+ 169 0014 FFF7FEFF 		bl	PWM_DC_WriteCompare
+ 170              	.LVL12:
+ 171              	.L13:
+ 172 0018 08BD     		pop	{r3, pc}
+ 173              	.L17:
+ 174 001a 00BF     		.align	2
+ 175              	.L16:
+ 176 001c 40000000 		.word	.LC3
+ 177 0020 00000000 		.word	.LANCHOR0
+ 178              		.cfi_endproc
+ 179              	.LFE66:
+ 180              		.size	decreaseSpeed, .-decreaseSpeed
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 5
+
+
+ 181              		.section	.text.increaseSpeed,"ax",%progbits
+ 182              		.align	2
+ 183              		.global	increaseSpeed
+ 184              		.thumb
+ 185              		.thumb_func
+ 186              		.type	increaseSpeed, %function
+ 187              	increaseSpeed:
+ 188              	.LFB67:
+  49:DCControl.c   ****     }
+  50:DCControl.c   **** }
+  51:DCControl.c   **** 
+  52:DCControl.c   **** void increaseSpeed()
+  53:DCControl.c   **** {
+ 189              		.loc 1 53 0
+ 190              		.cfi_startproc
+ 191              		@ args = 0, pretend = 0, frame = 0
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193 0000 08B5     		push	{r3, lr}
+ 194              		.cfi_def_cfa_offset 8
+ 195              		.cfi_offset 3, -8
+ 196              		.cfi_offset 14, -4
+  54:DCControl.c   ****     UART_1_PutString("Increasing speed\r\n");
+ 197              		.loc 1 54 0
+ 198 0002 0648     		ldr	r0, .L21
+ 199 0004 FFF7FEFF 		bl	UART_1_PutString
+ 200              	.LVL13:
+  55:DCControl.c   ****     if(compare < 100)
+ 201              		.loc 1 55 0
+ 202 0008 054B     		ldr	r3, .L21+4
+ 203 000a 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 204 000c 6328     		cmp	r0, #99
+ 205 000e 04D8     		bhi	.L18
+  56:DCControl.c   ****     {
+  57:DCControl.c   ****         compare += 2;
+ 206              		.loc 1 57 0
+ 207 0010 0230     		adds	r0, r0, #2
+ 208 0012 C0B2     		uxtb	r0, r0
+ 209 0014 1870     		strb	r0, [r3]
+  58:DCControl.c   ****         PWM_DC_WriteCompare(compare);
+ 210              		.loc 1 58 0
+ 211 0016 FFF7FEFF 		bl	PWM_DC_WriteCompare
+ 212              	.LVL14:
+ 213              	.L18:
+ 214 001a 08BD     		pop	{r3, pc}
+ 215              	.L22:
+ 216              		.align	2
+ 217              	.L21:
+ 218 001c 54000000 		.word	.LC4
+ 219 0020 00000000 		.word	.LANCHOR0
+ 220              		.cfi_endproc
+ 221              	.LFE67:
+ 222              		.size	increaseSpeed, .-increaseSpeed
+ 223              		.global	compare
+ 224              		.data
+ 225              		.set	.LANCHOR0,. + 0
+ 226              		.type	compare, %object
+ 227              		.size	compare, 1
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 6
+
+
+ 228              	compare:
+ 229 0000 14       		.byte	20
+ 230              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 231              		.align	2
+ 232              	.LC0:
+ 233 0000 53657420 		.ascii	"Set direction: forwards\015\012\000"
+ 233      64697265 
+ 233      6374696F 
+ 233      6E3A2066 
+ 233      6F727761 
+ 234 001a 0000     		.space	2
+ 235              	.LC1:
+ 236 001c 53657420 		.ascii	"Set direction: backwards\015\012\000"
+ 236      64697265 
+ 236      6374696F 
+ 236      6E3A2062 
+ 236      61636B77 
+ 237 0037 00       		.space	1
+ 238              	.LC2:
+ 239 0038 53746F70 		.ascii	"Stop\015\012\000"
+ 239      0D0A00
+ 240 003f 00       		.space	1
+ 241              	.LC3:
+ 242 0040 44656372 		.ascii	"Decreasing speed\015\012\000"
+ 242      65617369 
+ 242      6E672073 
+ 242      70656564 
+ 242      0D0A00
+ 243 0053 00       		.space	1
+ 244              	.LC4:
+ 245 0054 496E6372 		.ascii	"Increasing speed\015\012\000"
+ 245      65617369 
+ 245      6E672073 
+ 245      70656564 
+ 245      0D0A00
+ 246              		.text
+ 247              	.Letext0:
+ 248              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 249              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 250              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+ 251              		.file 5 "Generated_Source\\PSoC5/UART_1.h"
+ 252              		.file 6 "Generated_Source\\PSoC5/PWM_DC.h"
+ 253              		.file 7 "Generated_Source\\PSoC5/Pin_1_7.h"
+ 254              		.file 8 "Generated_Source\\PSoC5/Pin_1_6.h"
+ 255              		.section	.debug_info,"",%progbits
+ 256              	.Ldebug_info0:
+ 257 0000 70020000 		.4byte	0x270
+ 258 0004 0400     		.2byte	0x4
+ 259 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 260 000a 04       		.byte	0x4
+ 261 000b 01       		.uleb128 0x1
+ 262 000c 50000000 		.4byte	.LASF29
+ 263 0010 0C       		.byte	0xc
+ 264 0011 30000000 		.4byte	.LASF30
+ 265 0015 71010000 		.4byte	.LASF31
+ 266 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 267 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 7
+
+
+ 268 0021 00000000 		.4byte	.Ldebug_line0
+ 269 0025 02       		.uleb128 0x2
+ 270 0026 01       		.byte	0x1
+ 271 0027 06       		.byte	0x6
+ 272 0028 0A020000 		.4byte	.LASF0
+ 273 002c 03       		.uleb128 0x3
+ 274 002d 00000000 		.4byte	.LASF4
+ 275 0031 02       		.byte	0x2
+ 276 0032 1D       		.byte	0x1d
+ 277 0033 37000000 		.4byte	0x37
+ 278 0037 02       		.uleb128 0x2
+ 279 0038 01       		.byte	0x1
+ 280 0039 08       		.byte	0x8
+ 281 003a 42000000 		.4byte	.LASF1
+ 282 003e 02       		.uleb128 0x2
+ 283 003f 02       		.byte	0x2
+ 284 0040 05       		.byte	0x5
+ 285 0041 EB010000 		.4byte	.LASF2
+ 286 0045 02       		.uleb128 0x2
+ 287 0046 02       		.byte	0x2
+ 288 0047 07       		.byte	0x7
+ 289 0048 F0000000 		.4byte	.LASF3
+ 290 004c 03       		.uleb128 0x3
+ 291 004d 18000000 		.4byte	.LASF5
+ 292 0051 02       		.byte	0x2
+ 293 0052 3F       		.byte	0x3f
+ 294 0053 57000000 		.4byte	0x57
+ 295 0057 02       		.uleb128 0x2
+ 296 0058 04       		.byte	0x4
+ 297 0059 05       		.byte	0x5
+ 298 005a F5010000 		.4byte	.LASF6
+ 299 005e 02       		.uleb128 0x2
+ 300 005f 04       		.byte	0x4
+ 301 0060 07       		.byte	0x7
+ 302 0061 DE000000 		.4byte	.LASF7
+ 303 0065 02       		.uleb128 0x2
+ 304 0066 08       		.byte	0x8
+ 305 0067 05       		.byte	0x5
+ 306 0068 CA010000 		.4byte	.LASF8
+ 307 006c 02       		.uleb128 0x2
+ 308 006d 08       		.byte	0x8
+ 309 006e 07       		.byte	0x7
+ 310 006f 52010000 		.4byte	.LASF9
+ 311 0073 04       		.uleb128 0x4
+ 312 0074 04       		.byte	0x4
+ 313 0075 05       		.byte	0x5
+ 314 0076 696E7400 		.ascii	"int\000"
+ 315 007a 02       		.uleb128 0x2
+ 316 007b 04       		.byte	0x4
+ 317 007c 07       		.byte	0x7
+ 318 007d 2B010000 		.4byte	.LASF10
+ 319 0081 03       		.uleb128 0x3
+ 320 0082 69010000 		.4byte	.LASF11
+ 321 0086 03       		.byte	0x3
+ 322 0087 18       		.byte	0x18
+ 323 0088 2C000000 		.4byte	0x2c
+ 324 008c 03       		.uleb128 0x3
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 8
+
+
+ 325 008d AA010000 		.4byte	.LASF12
+ 326 0091 03       		.byte	0x3
+ 327 0092 2C       		.byte	0x2c
+ 328 0093 4C000000 		.4byte	0x4c
+ 329 0097 02       		.uleb128 0x2
+ 330 0098 04       		.byte	0x4
+ 331 0099 04       		.byte	0x4
+ 332 009a 3C000000 		.4byte	.LASF13
+ 333 009e 02       		.uleb128 0x2
+ 334 009f 08       		.byte	0x8
+ 335 00a0 04       		.byte	0x4
+ 336 00a1 24010000 		.4byte	.LASF14
+ 337 00a5 02       		.uleb128 0x2
+ 338 00a6 01       		.byte	0x1
+ 339 00a7 08       		.byte	0x8
+ 340 00a8 D8010000 		.4byte	.LASF15
+ 341 00ac 02       		.uleb128 0x2
+ 342 00ad 08       		.byte	0x8
+ 343 00ae 04       		.byte	0x4
+ 344 00af FE010000 		.4byte	.LASF16
+ 345 00b3 02       		.uleb128 0x2
+ 346 00b4 04       		.byte	0x4
+ 347 00b5 07       		.byte	0x7
+ 348 00b6 C1010000 		.4byte	.LASF17
+ 349 00ba 05       		.uleb128 0x5
+ 350 00bb 44010000 		.4byte	.LASF18
+ 351 00bf 01       		.byte	0x1
+ 352 00c0 13       		.byte	0x13
+ 353 00c1 00000000 		.4byte	.LFB63
+ 354 00c5 28000000 		.4byte	.LFE63-.LFB63
+ 355 00c9 01       		.uleb128 0x1
+ 356 00ca 9C       		.byte	0x9c
+ 357 00cb 12010000 		.4byte	0x112
+ 358 00cf 06       		.uleb128 0x6
+ 359 00d0 08000000 		.4byte	.LVL0
+ 360 00d4 47020000 		.4byte	0x247
+ 361 00d8 E6000000 		.4byte	0xe6
+ 362 00dc 07       		.uleb128 0x7
+ 363 00dd 01       		.uleb128 0x1
+ 364 00de 50       		.byte	0x50
+ 365 00df 05       		.uleb128 0x5
+ 366 00e0 03       		.byte	0x3
+ 367 00e1 00000000 		.4byte	.LC0
+ 368 00e5 00       		.byte	0
+ 369 00e6 08       		.uleb128 0x8
+ 370 00e7 10000000 		.4byte	.LVL1
+ 371 00eb 52020000 		.4byte	0x252
+ 372 00ef 06       		.uleb128 0x6
+ 373 00f0 16000000 		.4byte	.LVL2
+ 374 00f4 5D020000 		.4byte	0x25d
+ 375 00f8 02010000 		.4byte	0x102
+ 376 00fc 07       		.uleb128 0x7
+ 377 00fd 01       		.uleb128 0x1
+ 378 00fe 50       		.byte	0x50
+ 379 00ff 01       		.uleb128 0x1
+ 380 0100 30       		.byte	0x30
+ 381 0101 00       		.byte	0
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 9
+
+
+ 382 0102 09       		.uleb128 0x9
+ 383 0103 1C000000 		.4byte	.LVL3
+ 384 0107 68020000 		.4byte	0x268
+ 385 010b 07       		.uleb128 0x7
+ 386 010c 01       		.uleb128 0x1
+ 387 010d 50       		.byte	0x50
+ 388 010e 01       		.uleb128 0x1
+ 389 010f 31       		.byte	0x31
+ 390 0110 00       		.byte	0
+ 391 0111 00       		.byte	0
+ 392 0112 05       		.uleb128 0x5
+ 393 0113 B2010000 		.4byte	.LASF19
+ 394 0117 01       		.byte	0x1
+ 395 0118 1B       		.byte	0x1b
+ 396 0119 00000000 		.4byte	.LFB64
+ 397 011d 28000000 		.4byte	.LFE64-.LFB64
+ 398 0121 01       		.uleb128 0x1
+ 399 0122 9C       		.byte	0x9c
+ 400 0123 6A010000 		.4byte	0x16a
+ 401 0127 06       		.uleb128 0x6
+ 402 0128 08000000 		.4byte	.LVL4
+ 403 012c 47020000 		.4byte	0x247
+ 404 0130 3E010000 		.4byte	0x13e
+ 405 0134 07       		.uleb128 0x7
+ 406 0135 01       		.uleb128 0x1
+ 407 0136 50       		.byte	0x50
+ 408 0137 05       		.uleb128 0x5
+ 409 0138 03       		.byte	0x3
+ 410 0139 1C000000 		.4byte	.LC1
+ 411 013d 00       		.byte	0
+ 412 013e 08       		.uleb128 0x8
+ 413 013f 10000000 		.4byte	.LVL5
+ 414 0143 52020000 		.4byte	0x252
+ 415 0147 06       		.uleb128 0x6
+ 416 0148 16000000 		.4byte	.LVL6
+ 417 014c 5D020000 		.4byte	0x25d
+ 418 0150 5A010000 		.4byte	0x15a
+ 419 0154 07       		.uleb128 0x7
+ 420 0155 01       		.uleb128 0x1
+ 421 0156 50       		.byte	0x50
+ 422 0157 01       		.uleb128 0x1
+ 423 0158 31       		.byte	0x31
+ 424 0159 00       		.byte	0
+ 425 015a 09       		.uleb128 0x9
+ 426 015b 1C000000 		.4byte	.LVL7
+ 427 015f 68020000 		.4byte	0x268
+ 428 0163 07       		.uleb128 0x7
+ 429 0164 01       		.uleb128 0x1
+ 430 0165 50       		.byte	0x50
+ 431 0166 01       		.uleb128 0x1
+ 432 0167 30       		.byte	0x30
+ 433 0168 00       		.byte	0
+ 434 0169 00       		.byte	0
+ 435 016a 05       		.uleb128 0x5
+ 436 016b 38010000 		.4byte	.LASF20
+ 437 016f 01       		.byte	0x1
+ 438 0170 23       		.byte	0x23
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 10
+
+
+ 439 0171 00000000 		.4byte	.LFB65
+ 440 0175 1C000000 		.4byte	.LFE65-.LFB65
+ 441 0179 01       		.uleb128 0x1
+ 442 017a 9C       		.byte	0x9c
+ 443 017b B9010000 		.4byte	0x1b9
+ 444 017f 06       		.uleb128 0x6
+ 445 0180 08000000 		.4byte	.LVL8
+ 446 0184 47020000 		.4byte	0x247
+ 447 0188 96010000 		.4byte	0x196
+ 448 018c 07       		.uleb128 0x7
+ 449 018d 01       		.uleb128 0x1
+ 450 018e 50       		.byte	0x50
+ 451 018f 05       		.uleb128 0x5
+ 452 0190 03       		.byte	0x3
+ 453 0191 38000000 		.4byte	.LC2
+ 454 0195 00       		.byte	0
+ 455 0196 06       		.uleb128 0x6
+ 456 0197 0E000000 		.4byte	.LVL9
+ 457 019b 5D020000 		.4byte	0x25d
+ 458 019f A9010000 		.4byte	0x1a9
+ 459 01a3 07       		.uleb128 0x7
+ 460 01a4 01       		.uleb128 0x1
+ 461 01a5 50       		.byte	0x50
+ 462 01a6 01       		.uleb128 0x1
+ 463 01a7 30       		.byte	0x30
+ 464 01a8 00       		.byte	0
+ 465 01a9 09       		.uleb128 0x9
+ 466 01aa 14000000 		.4byte	.LVL10
+ 467 01ae 68020000 		.4byte	0x268
+ 468 01b2 07       		.uleb128 0x7
+ 469 01b3 01       		.uleb128 0x1
+ 470 01b4 50       		.byte	0x50
+ 471 01b5 01       		.uleb128 0x1
+ 472 01b6 30       		.byte	0x30
+ 473 01b7 00       		.byte	0
+ 474 01b8 00       		.byte	0
+ 475 01b9 05       		.uleb128 0x5
+ 476 01ba DD010000 		.4byte	.LASF21
+ 477 01be 01       		.byte	0x1
+ 478 01bf 2A       		.byte	0x2a
+ 479 01c0 00000000 		.4byte	.LFB66
+ 480 01c4 24000000 		.4byte	.LFE66-.LFB66
+ 481 01c8 01       		.uleb128 0x1
+ 482 01c9 9C       		.byte	0x9c
+ 483 01ca EF010000 		.4byte	0x1ef
+ 484 01ce 06       		.uleb128 0x6
+ 485 01cf 08000000 		.4byte	.LVL11
+ 486 01d3 47020000 		.4byte	0x247
+ 487 01d7 E5010000 		.4byte	0x1e5
+ 488 01db 07       		.uleb128 0x7
+ 489 01dc 01       		.uleb128 0x1
+ 490 01dd 50       		.byte	0x50
+ 491 01de 05       		.uleb128 0x5
+ 492 01df 03       		.byte	0x3
+ 493 01e0 40000000 		.4byte	.LC3
+ 494 01e4 00       		.byte	0
+ 495 01e5 08       		.uleb128 0x8
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 11
+
+
+ 496 01e6 18000000 		.4byte	.LVL12
+ 497 01ea 52020000 		.4byte	0x252
+ 498 01ee 00       		.byte	0
+ 499 01ef 05       		.uleb128 0x5
+ 500 01f0 22000000 		.4byte	.LASF22
+ 501 01f4 01       		.byte	0x1
+ 502 01f5 34       		.byte	0x34
+ 503 01f6 00000000 		.4byte	.LFB67
+ 504 01fa 24000000 		.4byte	.LFE67-.LFB67
+ 505 01fe 01       		.uleb128 0x1
+ 506 01ff 9C       		.byte	0x9c
+ 507 0200 25020000 		.4byte	0x225
+ 508 0204 06       		.uleb128 0x6
+ 509 0205 08000000 		.4byte	.LVL13
+ 510 0209 47020000 		.4byte	0x247
+ 511 020d 1B020000 		.4byte	0x21b
+ 512 0211 07       		.uleb128 0x7
+ 513 0212 01       		.uleb128 0x1
+ 514 0213 50       		.byte	0x50
+ 515 0214 05       		.uleb128 0x5
+ 516 0215 03       		.byte	0x3
+ 517 0216 54000000 		.4byte	.LC4
+ 518 021a 00       		.byte	0
+ 519 021b 08       		.uleb128 0x8
+ 520 021c 1A000000 		.4byte	.LVL14
+ 521 0220 52020000 		.4byte	0x252
+ 522 0224 00       		.byte	0
+ 523 0225 0A       		.uleb128 0xa
+ 524 0226 03010000 		.4byte	.LASF23
+ 525 022a 04       		.byte	0x4
+ 526 022b 1207     		.2byte	0x712
+ 527 022d 31020000 		.4byte	0x231
+ 528 0231 0B       		.uleb128 0xb
+ 529 0232 8C000000 		.4byte	0x8c
+ 530 0236 0C       		.uleb128 0xc
+ 531 0237 16020000 		.4byte	.LASF24
+ 532 023b 01       		.byte	0x1
+ 533 023c 11       		.byte	0x11
+ 534 023d 81000000 		.4byte	0x81
+ 535 0241 05       		.uleb128 0x5
+ 536 0242 03       		.byte	0x3
+ 537 0243 00000000 		.4byte	compare
+ 538 0247 0D       		.uleb128 0xd
+ 539 0248 1E020000 		.4byte	.LASF25
+ 540 024c 1E020000 		.4byte	.LASF25
+ 541 0250 05       		.byte	0x5
+ 542 0251 8B       		.byte	0x8b
+ 543 0252 0D       		.uleb128 0xd
+ 544 0253 10010000 		.4byte	.LASF26
+ 545 0257 10010000 		.4byte	.LASF26
+ 546 025b 06       		.byte	0x6
+ 547 025c C3       		.byte	0xc3
+ 548 025d 0D       		.uleb128 0xd
+ 549 025e 0A000000 		.4byte	.LASF27
+ 550 0262 0A000000 		.4byte	.LASF27
+ 551 0266 07       		.byte	0x7
+ 552 0267 26       		.byte	0x26
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 12
+
+
+ 553 0268 0D       		.uleb128 0xd
+ 554 0269 2F020000 		.4byte	.LASF28
+ 555 026d 2F020000 		.4byte	.LASF28
+ 556 0271 08       		.byte	0x8
+ 557 0272 26       		.byte	0x26
+ 558 0273 00       		.byte	0
+ 559              		.section	.debug_abbrev,"",%progbits
+ 560              	.Ldebug_abbrev0:
+ 561 0000 01       		.uleb128 0x1
+ 562 0001 11       		.uleb128 0x11
+ 563 0002 01       		.byte	0x1
+ 564 0003 25       		.uleb128 0x25
+ 565 0004 0E       		.uleb128 0xe
+ 566 0005 13       		.uleb128 0x13
+ 567 0006 0B       		.uleb128 0xb
+ 568 0007 03       		.uleb128 0x3
+ 569 0008 0E       		.uleb128 0xe
+ 570 0009 1B       		.uleb128 0x1b
+ 571 000a 0E       		.uleb128 0xe
+ 572 000b 55       		.uleb128 0x55
+ 573 000c 17       		.uleb128 0x17
+ 574 000d 11       		.uleb128 0x11
+ 575 000e 01       		.uleb128 0x1
+ 576 000f 10       		.uleb128 0x10
+ 577 0010 17       		.uleb128 0x17
+ 578 0011 00       		.byte	0
+ 579 0012 00       		.byte	0
+ 580 0013 02       		.uleb128 0x2
+ 581 0014 24       		.uleb128 0x24
+ 582 0015 00       		.byte	0
+ 583 0016 0B       		.uleb128 0xb
+ 584 0017 0B       		.uleb128 0xb
+ 585 0018 3E       		.uleb128 0x3e
+ 586 0019 0B       		.uleb128 0xb
+ 587 001a 03       		.uleb128 0x3
+ 588 001b 0E       		.uleb128 0xe
+ 589 001c 00       		.byte	0
+ 590 001d 00       		.byte	0
+ 591 001e 03       		.uleb128 0x3
+ 592 001f 16       		.uleb128 0x16
+ 593 0020 00       		.byte	0
+ 594 0021 03       		.uleb128 0x3
+ 595 0022 0E       		.uleb128 0xe
+ 596 0023 3A       		.uleb128 0x3a
+ 597 0024 0B       		.uleb128 0xb
+ 598 0025 3B       		.uleb128 0x3b
+ 599 0026 0B       		.uleb128 0xb
+ 600 0027 49       		.uleb128 0x49
+ 601 0028 13       		.uleb128 0x13
+ 602 0029 00       		.byte	0
+ 603 002a 00       		.byte	0
+ 604 002b 04       		.uleb128 0x4
+ 605 002c 24       		.uleb128 0x24
+ 606 002d 00       		.byte	0
+ 607 002e 0B       		.uleb128 0xb
+ 608 002f 0B       		.uleb128 0xb
+ 609 0030 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 13
+
+
+ 610 0031 0B       		.uleb128 0xb
+ 611 0032 03       		.uleb128 0x3
+ 612 0033 08       		.uleb128 0x8
+ 613 0034 00       		.byte	0
+ 614 0035 00       		.byte	0
+ 615 0036 05       		.uleb128 0x5
+ 616 0037 2E       		.uleb128 0x2e
+ 617 0038 01       		.byte	0x1
+ 618 0039 3F       		.uleb128 0x3f
+ 619 003a 19       		.uleb128 0x19
+ 620 003b 03       		.uleb128 0x3
+ 621 003c 0E       		.uleb128 0xe
+ 622 003d 3A       		.uleb128 0x3a
+ 623 003e 0B       		.uleb128 0xb
+ 624 003f 3B       		.uleb128 0x3b
+ 625 0040 0B       		.uleb128 0xb
+ 626 0041 27       		.uleb128 0x27
+ 627 0042 19       		.uleb128 0x19
+ 628 0043 11       		.uleb128 0x11
+ 629 0044 01       		.uleb128 0x1
+ 630 0045 12       		.uleb128 0x12
+ 631 0046 06       		.uleb128 0x6
+ 632 0047 40       		.uleb128 0x40
+ 633 0048 18       		.uleb128 0x18
+ 634 0049 9742     		.uleb128 0x2117
+ 635 004b 19       		.uleb128 0x19
+ 636 004c 01       		.uleb128 0x1
+ 637 004d 13       		.uleb128 0x13
+ 638 004e 00       		.byte	0
+ 639 004f 00       		.byte	0
+ 640 0050 06       		.uleb128 0x6
+ 641 0051 898201   		.uleb128 0x4109
+ 642 0054 01       		.byte	0x1
+ 643 0055 11       		.uleb128 0x11
+ 644 0056 01       		.uleb128 0x1
+ 645 0057 31       		.uleb128 0x31
+ 646 0058 13       		.uleb128 0x13
+ 647 0059 01       		.uleb128 0x1
+ 648 005a 13       		.uleb128 0x13
+ 649 005b 00       		.byte	0
+ 650 005c 00       		.byte	0
+ 651 005d 07       		.uleb128 0x7
+ 652 005e 8A8201   		.uleb128 0x410a
+ 653 0061 00       		.byte	0
+ 654 0062 02       		.uleb128 0x2
+ 655 0063 18       		.uleb128 0x18
+ 656 0064 9142     		.uleb128 0x2111
+ 657 0066 18       		.uleb128 0x18
+ 658 0067 00       		.byte	0
+ 659 0068 00       		.byte	0
+ 660 0069 08       		.uleb128 0x8
+ 661 006a 898201   		.uleb128 0x4109
+ 662 006d 00       		.byte	0
+ 663 006e 11       		.uleb128 0x11
+ 664 006f 01       		.uleb128 0x1
+ 665 0070 31       		.uleb128 0x31
+ 666 0071 13       		.uleb128 0x13
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 14
+
+
+ 667 0072 00       		.byte	0
+ 668 0073 00       		.byte	0
+ 669 0074 09       		.uleb128 0x9
+ 670 0075 898201   		.uleb128 0x4109
+ 671 0078 01       		.byte	0x1
+ 672 0079 11       		.uleb128 0x11
+ 673 007a 01       		.uleb128 0x1
+ 674 007b 31       		.uleb128 0x31
+ 675 007c 13       		.uleb128 0x13
+ 676 007d 00       		.byte	0
+ 677 007e 00       		.byte	0
+ 678 007f 0A       		.uleb128 0xa
+ 679 0080 34       		.uleb128 0x34
+ 680 0081 00       		.byte	0
+ 681 0082 03       		.uleb128 0x3
+ 682 0083 0E       		.uleb128 0xe
+ 683 0084 3A       		.uleb128 0x3a
+ 684 0085 0B       		.uleb128 0xb
+ 685 0086 3B       		.uleb128 0x3b
+ 686 0087 05       		.uleb128 0x5
+ 687 0088 49       		.uleb128 0x49
+ 688 0089 13       		.uleb128 0x13
+ 689 008a 3F       		.uleb128 0x3f
+ 690 008b 19       		.uleb128 0x19
+ 691 008c 3C       		.uleb128 0x3c
+ 692 008d 19       		.uleb128 0x19
+ 693 008e 00       		.byte	0
+ 694 008f 00       		.byte	0
+ 695 0090 0B       		.uleb128 0xb
+ 696 0091 35       		.uleb128 0x35
+ 697 0092 00       		.byte	0
+ 698 0093 49       		.uleb128 0x49
+ 699 0094 13       		.uleb128 0x13
+ 700 0095 00       		.byte	0
+ 701 0096 00       		.byte	0
+ 702 0097 0C       		.uleb128 0xc
+ 703 0098 34       		.uleb128 0x34
+ 704 0099 00       		.byte	0
+ 705 009a 03       		.uleb128 0x3
+ 706 009b 0E       		.uleb128 0xe
+ 707 009c 3A       		.uleb128 0x3a
+ 708 009d 0B       		.uleb128 0xb
+ 709 009e 3B       		.uleb128 0x3b
+ 710 009f 0B       		.uleb128 0xb
+ 711 00a0 49       		.uleb128 0x49
+ 712 00a1 13       		.uleb128 0x13
+ 713 00a2 3F       		.uleb128 0x3f
+ 714 00a3 19       		.uleb128 0x19
+ 715 00a4 02       		.uleb128 0x2
+ 716 00a5 18       		.uleb128 0x18
+ 717 00a6 00       		.byte	0
+ 718 00a7 00       		.byte	0
+ 719 00a8 0D       		.uleb128 0xd
+ 720 00a9 2E       		.uleb128 0x2e
+ 721 00aa 00       		.byte	0
+ 722 00ab 3F       		.uleb128 0x3f
+ 723 00ac 19       		.uleb128 0x19
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 15
+
+
+ 724 00ad 3C       		.uleb128 0x3c
+ 725 00ae 19       		.uleb128 0x19
+ 726 00af 6E       		.uleb128 0x6e
+ 727 00b0 0E       		.uleb128 0xe
+ 728 00b1 03       		.uleb128 0x3
+ 729 00b2 0E       		.uleb128 0xe
+ 730 00b3 3A       		.uleb128 0x3a
+ 731 00b4 0B       		.uleb128 0xb
+ 732 00b5 3B       		.uleb128 0x3b
+ 733 00b6 0B       		.uleb128 0xb
+ 734 00b7 00       		.byte	0
+ 735 00b8 00       		.byte	0
+ 736 00b9 00       		.byte	0
+ 737              		.section	.debug_aranges,"",%progbits
+ 738 0000 3C000000 		.4byte	0x3c
+ 739 0004 0200     		.2byte	0x2
+ 740 0006 00000000 		.4byte	.Ldebug_info0
+ 741 000a 04       		.byte	0x4
+ 742 000b 00       		.byte	0
+ 743 000c 0000     		.2byte	0
+ 744 000e 0000     		.2byte	0
+ 745 0010 00000000 		.4byte	.LFB63
+ 746 0014 28000000 		.4byte	.LFE63-.LFB63
+ 747 0018 00000000 		.4byte	.LFB64
+ 748 001c 28000000 		.4byte	.LFE64-.LFB64
+ 749 0020 00000000 		.4byte	.LFB65
+ 750 0024 1C000000 		.4byte	.LFE65-.LFB65
+ 751 0028 00000000 		.4byte	.LFB66
+ 752 002c 24000000 		.4byte	.LFE66-.LFB66
+ 753 0030 00000000 		.4byte	.LFB67
+ 754 0034 24000000 		.4byte	.LFE67-.LFB67
+ 755 0038 00000000 		.4byte	0
+ 756 003c 00000000 		.4byte	0
+ 757              		.section	.debug_ranges,"",%progbits
+ 758              	.Ldebug_ranges0:
+ 759 0000 00000000 		.4byte	.LFB63
+ 760 0004 28000000 		.4byte	.LFE63
+ 761 0008 00000000 		.4byte	.LFB64
+ 762 000c 28000000 		.4byte	.LFE64
+ 763 0010 00000000 		.4byte	.LFB65
+ 764 0014 1C000000 		.4byte	.LFE65
+ 765 0018 00000000 		.4byte	.LFB66
+ 766 001c 24000000 		.4byte	.LFE66
+ 767 0020 00000000 		.4byte	.LFB67
+ 768 0024 24000000 		.4byte	.LFE67
+ 769 0028 00000000 		.4byte	0
+ 770 002c 00000000 		.4byte	0
+ 771              		.section	.debug_line,"",%progbits
+ 772              	.Ldebug_line0:
+ 773 0000 DA010000 		.section	.debug_str,"MS",%progbits,1
+ 773      02007601 
+ 773      00000201 
+ 773      FB0E0D00 
+ 773      01010101 
+ 774              	.LASF4:
+ 775 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 775      6E74385F 
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 16
+
+
+ 775      7400
+ 776              	.LASF27:
+ 777 000a 50696E5F 		.ascii	"Pin_1_7_Write\000"
+ 777      315F375F 
+ 777      57726974 
+ 777      6500
+ 778              	.LASF5:
+ 779 0018 5F5F696E 		.ascii	"__int32_t\000"
+ 779      7433325F 
+ 779      7400
+ 780              	.LASF22:
+ 781 0022 696E6372 		.ascii	"increaseSpeed\000"
+ 781      65617365 
+ 781      53706565 
+ 781      6400
+ 782              	.LASF30:
+ 783 0030 4443436F 		.ascii	"DCControl.c\000"
+ 783      6E74726F 
+ 783      6C2E6300 
+ 784              	.LASF13:
+ 785 003c 666C6F61 		.ascii	"float\000"
+ 785      7400
+ 786              	.LASF1:
+ 787 0042 756E7369 		.ascii	"unsigned char\000"
+ 787      676E6564 
+ 787      20636861 
+ 787      7200
+ 788              	.LASF29:
+ 789 0050 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 789      43313120 
+ 789      352E342E 
+ 789      31203230 
+ 789      31363036 
+ 790 0083 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 790      20726576 
+ 790      6973696F 
+ 790      6E203233 
+ 790      37373135 
+ 791 00b6 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 791      66756E63 
+ 791      74696F6E 
+ 791      2D736563 
+ 791      74696F6E 
+ 792              	.LASF7:
+ 793 00de 6C6F6E67 		.ascii	"long unsigned int\000"
+ 793      20756E73 
+ 793      69676E65 
+ 793      6420696E 
+ 793      7400
+ 794              	.LASF3:
+ 795 00f0 73686F72 		.ascii	"short unsigned int\000"
+ 795      7420756E 
+ 795      7369676E 
+ 795      65642069 
+ 795      6E7400
+ 796              	.LASF23:
+ 797 0103 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 17
+
+
+ 797      52784275 
+ 797      66666572 
+ 797      00
+ 798              	.LASF26:
+ 799 0110 50574D5F 		.ascii	"PWM_DC_WriteCompare\000"
+ 799      44435F57 
+ 799      72697465 
+ 799      436F6D70 
+ 799      61726500 
+ 800              	.LASF14:
+ 801 0124 646F7562 		.ascii	"double\000"
+ 801      6C6500
+ 802              	.LASF10:
+ 803 012b 756E7369 		.ascii	"unsigned int\000"
+ 803      676E6564 
+ 803      20696E74 
+ 803      00
+ 804              	.LASF20:
+ 805 0138 73746F70 		.ascii	"stopDriving\000"
+ 805      44726976 
+ 805      696E6700 
+ 806              	.LASF18:
+ 807 0144 64726976 		.ascii	"driveForwards\000"
+ 807      65466F72 
+ 807      77617264 
+ 807      7300
+ 808              	.LASF9:
+ 809 0152 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 809      206C6F6E 
+ 809      6720756E 
+ 809      7369676E 
+ 809      65642069 
+ 810              	.LASF11:
+ 811 0169 75696E74 		.ascii	"uint8_t\000"
+ 811      385F7400 
+ 812              	.LASF31:
+ 813 0171 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Documents\\Projekt\\BilProjekt\\BilP"
+ 813      635C486F 
+ 813      6D655C44 
+ 813      6F63756D 
+ 813      656E7473 
+ 814 019d 726F6A65 		.ascii	"rojekt.cydsn\000"
+ 814      6B742E63 
+ 814      7964736E 
+ 814      00
+ 815              	.LASF12:
+ 816 01aa 696E7433 		.ascii	"int32_t\000"
+ 816      325F7400 
+ 817              	.LASF19:
+ 818 01b2 64726976 		.ascii	"driveBackwards\000"
+ 818      65426163 
+ 818      6B776172 
+ 818      647300
+ 819              	.LASF17:
+ 820 01c1 73697A65 		.ascii	"sizetype\000"
+ 820      74797065 
+ 820      00
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccn55Cvf.s 			page 18
+
+
+ 821              	.LASF8:
+ 822 01ca 6C6F6E67 		.ascii	"long long int\000"
+ 822      206C6F6E 
+ 822      6720696E 
+ 822      7400
+ 823              	.LASF15:
+ 824 01d8 63686172 		.ascii	"char\000"
+ 824      00
+ 825              	.LASF21:
+ 826 01dd 64656372 		.ascii	"decreaseSpeed\000"
+ 826      65617365 
+ 826      53706565 
+ 826      6400
+ 827              	.LASF2:
+ 828 01eb 73686F72 		.ascii	"short int\000"
+ 828      7420696E 
+ 828      7400
+ 829              	.LASF6:
+ 830 01f5 6C6F6E67 		.ascii	"long int\000"
+ 830      20696E74 
+ 830      00
+ 831              	.LASF16:
+ 832 01fe 6C6F6E67 		.ascii	"long double\000"
+ 832      20646F75 
+ 832      626C6500 
+ 833              	.LASF0:
+ 834 020a 7369676E 		.ascii	"signed char\000"
+ 834      65642063 
+ 834      68617200 
+ 835              	.LASF24:
+ 836 0216 636F6D70 		.ascii	"compare\000"
+ 836      61726500 
+ 837              	.LASF25:
+ 838 021e 55415254 		.ascii	"UART_1_PutString\000"
+ 838      5F315F50 
+ 838      75745374 
+ 838      72696E67 
+ 838      00
+ 839              	.LASF28:
+ 840 022f 50696E5F 		.ascii	"Pin_1_6_Write\000"
+ 840      315F365F 
+ 840      57726974 
+ 840      6500
+ 841              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

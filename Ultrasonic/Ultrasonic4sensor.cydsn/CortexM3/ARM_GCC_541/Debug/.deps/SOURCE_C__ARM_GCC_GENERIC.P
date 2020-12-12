@@ -1,0 +1,82 @@
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/CyLib.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/CySpc.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S1_Echo.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S1_Echo_aliases.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S1_Trig.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S1_Trig_aliases.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S2_Echo.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S2_Echo_aliases.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S2_Trig.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S2_Trig_aliases.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S3_Echo.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S3_Echo_aliases.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S3_Trig.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S3_Trig_aliases.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S4_Echo.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S4_Echo_aliases.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S4_Trig.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S4_Trig_aliases.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/UART_1.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/UART_1_IntClock.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/core_cmFunc.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/core_cmInstr.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cyPm.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cydevice.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cypins.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cytypes.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/isr_uart_rx.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/project.h C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/main.c 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S1_Echo.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S1_Echo_aliases.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S1_Trig.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S1_Trig_aliases.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S2_Echo.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S2_Echo_aliases.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S2_Trig.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S2_Trig_aliases.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S3_Echo.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S3_Echo_aliases.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S3_Trig.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S3_Trig_aliases.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S4_Echo.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S4_Echo_aliases.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S4_Trig.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/Pin_S4_Trig_aliases.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/UART_1.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/UART_1_IntClock.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/core_cmFunc.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/core_cmInstr.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/isr_uart_rx.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/project.h : 
+
+C:/Min\ mappe/GitHub/projekt3/Ultrasonic/Ultrasonic4sensor.cydsn/main.c : 
+

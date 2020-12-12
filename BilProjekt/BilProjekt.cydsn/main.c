@@ -11,7 +11,12 @@
 */
 #include "project.h"
 #include <stdbool.h>
+#include "distSensor.h"
+#include "DCControl.h"
+#include "servoControl.h"
+
 bool driving = false;
+bool enoughSpace = false;
 int distance = 0;
 int initialDist = 0;
 
@@ -20,72 +25,89 @@ int main(void)
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+    
+    UART_1_Start();
+    PWM_DC_Start();
+    PWM_Servo_Start();
+    //Pin_RPi_Tester = Pin_RPi_Read();
+    UART_1_PutString("Park-a-lot system started.\r\n");
 
     for(;;)
     {
-        if(RPi_PIN == 1)
+        int Pin_RPi_Tester = Pin_RPi_Read();
+        
+        if(Pin_RPi_Tester != 0)
         {
             //Find p-plads
             distance = 0;
-            initialDist = getDistance(id);
-            driveForwards(speed);
+            initialDist = getDistance(1);
+            middlePos();
+            CyDelay(2000);
+            driveForwards();
             driving = true;
+            UART_1_PutString("Driving forwards. Looking for space\r\n");
             
             
             while(driving == true)
             {
-                if(getDistance(id) > initialDist+4)
+                
+                
+                if(getDistance(1) > (initialDist+4))
                 {
                     distance++;
                     CyDelayUs(10);
                 }
                 else
                 {
-                    if(distance == enough???)
+                    if(distance > 10)
                     {
                         driving = false;
+                        stopDriving();
+                        UART_1_PutString("Parking space found\r\n");
+                        enoughSpace = true;
                         break;
                     }
                     else
                     {
                         distance = 0;
+                        UART_1_PutString("Not enough space\r\n");
                     }
                 }
+                if(getDistance(2) < 50)
+                {
+                    stopDriving();
+                    UART_1_PutString("Obstacle in front. Ejecting driver.\r\n");
+                    break;
+                }
+                
+                CyDelay(30);
+                
             }
             
-            turnWheelsRight();
-            driveBackwards(speed);
-            CyDelay(1000);
-            turnWheelsLeft();
-            CyDelay(1000);
-            stopDriving(); //parking foretaget
-            
-        }
-    }
-}
-
-int getDistance(id)
-{
-    int counter = 0;
-    float cm;
-    
-    Pin_SensorRight_Trig_Write(0);
-    CyDelayUs(2);
-    
-    Pin_SensorRight_Trig_Write(1);
-    CyDelayUs(10);
-    Pin_SensorRight_Trig_Write(0);
-    
-    while(Pin_SensorRight_Echo_Read() != 1) {}
-    
-    while(Pin_SensorRight_Echo_Read() != 0)
-    {
-        counter++;
-        CyDelayUs(10);
-        if(Pin_SensorRight_Echo_Read() == 0)
-        {
-            return counter;
-            break;
+            if(enoughSpace == true)
+            {
+                CyDelay(1000);
+                UART_1_PutString("Initiating parkingsequence\r\n");
+                turnWheelsRight();
+                UART_1_PutString("Turning wheels right\r\n");
+                CyDelay(500);
+                driveBackwards();
+                UART_1_PutString("Driving backwards\r\n");
+                CyDelay(1000);
+                stopDriving();
+                turnWheelsLeft();
+                UART_1_PutString("Turning wheels left\r\n");
+                CyDelay(500);
+                driveBackwards();
+                UART_1_PutString("Driving backwards again\r\n");
+                CyDelay(1000);
+                stopDriving(); //parking foretaget
+                CyDelay(1000);
+                middlePos();
+                UART_1_PutString("Parking done\r\n");
+                
+                enoughSpace = false;
+            }
         }
     }
 }

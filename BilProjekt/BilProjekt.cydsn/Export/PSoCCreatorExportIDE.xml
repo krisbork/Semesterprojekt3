@@ -37,7 +37,13 @@
       <Folder BuildType="STRICT" Path="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn">
         <Files Root="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
+          <File BuildType="BUILD" Toolchain="">distSensor.c</File>
+          <File BuildType="BUILD" Toolchain="">DCControl.c</File>
+          <File BuildType="BUILD" Toolchain="">servoControl.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
+          <File BuildType="BUILD" Toolchain="">distSensor.h</File>
+          <File BuildType="BUILD" Toolchain="">DCControl.h</File>
+          <File BuildType="BUILD" Toolchain="">servoControl.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\Generated_Source\PSoC5">
@@ -91,6 +97,52 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareimport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareexport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareimport.scat</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_1_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_1_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1_7_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1_7.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1_7.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1_6_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1_6.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1_6.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_uart_rx.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_uart_rx.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_1_IntClock.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_1_IntClock.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_RPi_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_RPi.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_RPi.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorRight_Trig_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorRight_Trig.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorRight_Trig.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorRight_Echo_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorRight_Echo.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorRight_Echo.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_DC.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_DC.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_DC_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_PWM_DC_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_PWM_DC.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_PWM_DC.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Servo.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Servo.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Servo_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_PWM_Servo_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_PWM_Servo.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_PWM_Servo.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorFront_Trig_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorFront_Trig.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorFront_Trig.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorFront_Echo_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorFront_Echo.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_SensorFront_Echo.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\Export\ARM_GCC_Generic">

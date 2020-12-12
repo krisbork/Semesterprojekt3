@@ -1,0 +1,10 @@
+C:/ase/gfv/PRJ3/Ultrasonic/Ultrasonic4sensor.cydsn/CortexM3/ARM_GCC_541/Debug/CyBootAsmGnu.o : C:/ase/gfv/PRJ3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s C:/ase/gfv/PRJ3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cydevicegnu.inc C:/ase/gfv/PRJ3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc C:/ase/gfv/PRJ3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
+
+C:/ase/gfv/PRJ3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+
+C:/ase/gfv/PRJ3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
+
+C:/ase/gfv/PRJ3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
+
+C:/ase/gfv/PRJ3/Ultrasonic/Ultrasonic4sensor.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
+

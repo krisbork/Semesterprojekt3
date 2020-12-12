@@ -30,8 +30,14 @@
 <v>BilProjekt\BilProjekt\BilProjekt.cydwr\EEPROM</v>
 <v>BilProjekt\BilProjekt\Header Files</v>
 <v>BilProjekt\BilProjekt\Header Files\cyapicallbacks.h</v>
+<v>BilProjekt\BilProjekt\Header Files\DCControl.h</v>
+<v>BilProjekt\BilProjekt\Header Files\distSensor.h</v>
+<v>BilProjekt\BilProjekt\Header Files\servoControl.h</v>
 <v>BilProjekt\BilProjekt\Source Files</v>
+<v>BilProjekt\BilProjekt\Source Files\DCControl.c</v>
+<v>BilProjekt\BilProjekt\Source Files\distSensor.c</v>
 <v>BilProjekt\BilProjekt\Source Files\main.c</v>
+<v>BilProjekt\BilProjekt\Source Files\servoControl.c</v>
 <v>BilProjekt\BilProjekt\Generated_Source</v>
 <v>BilProjekt\BilProjekt\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
@@ -51,12 +57,34 @@
 <v>BilProjekt\BilProjekt\BilProjekt.cydwr\EEPROM</v>
 <v>BilProjekt\BilProjekt\Header Files</v>
 <v>BilProjekt\BilProjekt\Header Files\cyapicallbacks.h</v>
+<v>BilProjekt\BilProjekt\Header Files\DCControl.h</v>
+<v>BilProjekt\BilProjekt\Header Files\distSensor.h</v>
+<v>BilProjekt\BilProjekt\Header Files\servoControl.h</v>
 <v>BilProjekt\BilProjekt\Source Files</v>
+<v>BilProjekt\BilProjekt\Source Files\DCControl.c</v>
+<v>BilProjekt\BilProjekt\Source Files\distSensor.c</v>
 <v>BilProjekt\BilProjekt\Source Files\main.c</v>
+<v>BilProjekt\BilProjekt\Source Files\servoControl.c</v>
 <v>BilProjekt\BilProjekt\Generated_Source</v>
 <v>BilProjekt\BilProjekt\Generated_Source\PSoC5</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Clock_1</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Clock_2</v>
 <v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cy_boot</v>
 <v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\isr_uart_rx</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Pin_1_6</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Pin_1_7</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Pin_PWM_DC</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Pin_PWM_Servo</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Pin_RPi</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Pin_SensorFront_Echo</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Pin_SensorFront_Trig</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Pin_SensorRight_Echo</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\Pin_SensorRight_Trig</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\PWM_DC</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\PWM_Servo</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\UART_1</v>
+<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\UART_1_IntClock</v>
 <v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cycodeshareexport.ld</v>
 <v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cycodeshareimport.ld</v>
 <v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cycodeshareimport.scat</v>
@@ -64,16 +92,6 @@
 <v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cydevice_trm.h</v>
 <v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cydevicegnu.inc</v>
 <v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
-<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cydeviceiar.inc</v>
-<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
-<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cydevicerv.inc</v>
-<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cydevicerv_trm.inc</v>
-<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cydisabledsheets.h</v>
-<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cyfitter.h</v>
-<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cyfitter_cfg.c</v>
-<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cyfitter_cfg.h</v>
-<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cyfittergnu.inc</v>
-<v>BilProjekt\BilProjekt\Generated_Source\PSoC5\cyfitteriar.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -98,6 +116,8 @@
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
@@ -109,7 +129,29 @@
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\DCControl.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\distSensor.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_uart_rx.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_1_6.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_1_7.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_PWM_DC.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_PWM_Servo.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_RPi.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SensorFront_Echo.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SensorFront_Trig.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SensorRight_Echo.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SensorRight_Trig.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_DC.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_DC_PM.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Servo.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Servo_PM.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\servoControl.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_BOOT.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_INT.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_IntClock.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_PM.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\BilProjekt.elf</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\BilProjekt.hex</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\BilProjekt.map</v>
@@ -124,6 +166,8 @@
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
@@ -135,7 +179,29 @@
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\DCControl.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\distSensor.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_uart_rx.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_1_6.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_1_7.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_PWM_DC.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_PWM_Servo.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_RPi.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SensorFront_Echo.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SensorFront_Trig.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SensorRight_Echo.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_SensorRight_Trig.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_DC.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_DC_PM.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Servo.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Servo_PM.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\servoControl.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_BOOT.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_INT.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_IntClock.lst</v>
+<v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_PM.lst</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\BilProjekt.elf</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\BilProjekt.hex</v>
 <v>BilProjekt\BilProjekt\CortexM3\ARM_GCC_541\Debug\BilProjekt.map</v>
@@ -157,6 +223,14 @@
 <v>BilProjekt\BilProjekt\CY8C58LP Family Datasheet</v>
 <v>BilProjekt\BilProjekt\System Reference Guides</v>
 <v>BilProjekt\BilProjekt\System Reference Guides\cy_boot_v5_90</v>
+<v>BilProjekt\BilProjekt\cy_clock_v2_20</v>
+<v>BilProjekt\BilProjekt\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>BilProjekt\BilProjekt\cy_isr_v1_70.pdf</v>
+<v>BilProjekt\BilProjekt\cy_pins_v2_20</v>
+<v>BilProjekt\BilProjekt\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>BilProjekt\BilProjekt\PWM_v3_30</v>
+<v>BilProjekt\BilProjekt\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>BilProjekt\BilProjekt\UART_v2_50.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>BilProjekt</v>
@@ -165,6 +239,14 @@
 <v>BilProjekt\BilProjekt\CY8C58LP Family Datasheet</v>
 <v>BilProjekt\BilProjekt\System Reference Guides</v>
 <v>BilProjekt\BilProjekt\System Reference Guides\cy_boot_v5_90</v>
+<v>BilProjekt\BilProjekt\cy_clock_v2_20</v>
+<v>BilProjekt\BilProjekt\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>BilProjekt\BilProjekt\cy_isr_v1_70.pdf</v>
+<v>BilProjekt\BilProjekt\cy_pins_v2_20</v>
+<v>BilProjekt\BilProjekt\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>BilProjekt\BilProjekt\PWM_v3_30</v>
+<v>BilProjekt\BilProjekt\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>BilProjekt\BilProjekt\UART_v2_50.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -177,6 +259,13 @@
 <name v=".\BilProjekt.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\BilProjekt.cydsn\main.c" />
 <name v=".\BilProjekt.cydsn\BilProjekt.cydwr" />
+<name v=".\BilProjekt.cydsn\distSensor.c" />
+<name v=".\BilProjekt.cydsn\distSensor.h" />
+<name v=".\BilProjekt.cydsn\cyapicallbacks.h" />
+<name v=".\BilProjekt.cydsn\DCControl.c" />
+<name v=".\BilProjekt.cydsn\DCControl.h" />
+<name v=".\BilProjekt.cydsn\servoControl.c" />
+<name v=".\BilProjekt.cydsn\servoControl.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -184,7 +273,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1050, 531" SelectedTabbedMdiWindow="57fc9390-e2b7-4303-9fe0-562cfdec0c27"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="818be0ad-abe8-4ffe-99f2-e5ea0a931867" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\TopDesign\TopDesign.cysch" Guid="1d62ec78-daf0-4c13-86e1-8826931648f4" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\main.c" Guid="57fc9390-e2b7-4303-9fe0-562cfdec0c27" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\BilProjekt.cydwr" Guid="3fb158ce-ef6d-4b87-9e55-a03371894d54" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1402, 751" SelectedTabbedMdiWindow="9c27e4c2-b371-4d9b-9e28-786855cec2f9"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="818be0ad-abe8-4ffe-99f2-e5ea0a931867" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\TopDesign\TopDesign.cysch" Guid="1d62ec78-daf0-4c13-86e1-8826931648f4" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\main.c" Guid="57fc9390-e2b7-4303-9fe0-562cfdec0c27" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\BilProjekt.cydwr" Guid="3fb158ce-ef6d-4b87-9e55-a03371894d54" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\distSensor.c" Guid="9c27e4c2-b371-4d9b-9e28-786855cec2f9" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\distSensor.h" Guid="ae14d984-accf-4fd4-913e-efd0e98b7a8a" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\cyapicallbacks.h" Guid="c09e14ac-1cb8-4a7d-ba77-feb27a029b2c" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\DCControl.c" Guid="4510ea5e-0a47-427e-9394-2ce42e23bacc" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\DCControl.h" Guid="9c56848c-2af3-4c4f-abb6-cc404545f941" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\servoControl.c" Guid="7789fc9c-6ddc-4796-8ce9-9e8e0aecf660" /><DocumentWindow Key="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\servoControl.h" Guid="aca897da-2cef-48f3-b7ce-e58e37705a72" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
