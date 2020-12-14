@@ -38,6 +38,23 @@ int main()
         sleep(1);
         write(fd,"out",4);
         close(fd);
+        
+        fd = open("/sys/class/gpio/gpio13/direction", O_WRONLY);
+        if (fd == -1)
+        {
+            close(fd);
+            fd = open("/sys/class/gpio/export", O_WRONLY);
+            cout << "Initializing GPIO port 13..." << endl;
+            sleep(1);
+            write(fd, "13",3);
+            close(fd);
+        }
+    
+        fd = open("/sys/class/gpio/gpio13/direction", O_WRONLY);
+        cout << "Setting direction of GPIO port 13 to 'out'..." << endl;
+        sleep(1);
+        write(fd,"out",4);
+        close(fd);
 
         // Welcome message
         std::system("clear");
@@ -54,6 +71,7 @@ int main()
                 {
                     std::system("clear");
                     cout << "Parking started..." << endl;
+                    cout << "Press '0' to cancel parking" << endl;
                     int fd;
                     fd = open("/sys/class/gpio/gpio19/value", O_WRONLY);
                     write(fd,"1",2);
@@ -63,15 +81,27 @@ int main()
                     sleep(1);
                     
                     fd = open("/sys/class/gpio/gpio13/value", O_RDONLY);
-                    
-                    while((getch() != 48) || (val[0] != 0))
+                }
+                break;
+                case 48:
+                {
+                    std::system("clear");
+                    cout << "Parking cancelled!" << endl;
+                    int fd;
+                    fd = open("/sys/class/gpio/gpio13/value", O_WRONLY);
+                    write(fd,"1",2);
+                    sleep(1);
+                    write(fd,"0",2);
+                    close(fd);
+                    for(int i = 5; i > 0; i--)
                     {
                         std::system("clear");
-                        cout << "Parking started..." << endl;
-                        read(fd, val, 1);
+                        cout << "Returning to main screen in " << i << "..." << endl;
                         sleep(1);
                     }
-                    cout << "Parking finished!" << endl;
+                    std::system("clear");
+                    cout << "Park-A-Lot system started" << endl;
+                    cout << "Press '1' to start parking" << endl;
                 }
                 break;
                 default:
