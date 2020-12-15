@@ -14,11 +14,14 @@
 #include "distSensor.h"
 #include "DCControl.h"
 #include "servoControl.h"
+#include "interruptRoutine.h"
 
 bool driving = false;
 bool enoughSpace = false;
 int distance = 0;
 int initialDist = 0;
+
+CY_ISR_PROTO(GPIO_ISR);
 
 int main(void)
 {
@@ -26,6 +29,8 @@ int main(void)
 
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     
+    isr_RPi_StartEx(GPIO_ISR);
+    CyGlobalIntEnable;
     UART_1_Start();
     PWM_DC_Start();
     PWM_Servo_Start();
@@ -42,10 +47,10 @@ int main(void)
             distance = 0;
             initialDist = getDistance(1);
             middlePos();
-            CyDelay(2000);
+            CyDelay(500);
             driveForwards();
-            driving = true;
             UART_1_PutString("Driving forwards. Looking for space\r\n");
+            driving = true;
             
             
             while(driving == true)
@@ -73,18 +78,18 @@ int main(void)
                         UART_1_PutString("Not enough space\r\n");
                     }
                 }
-                if(getDistance(2) < 50)
-                {
-                    stopDriving();
-                    UART_1_PutString("Obstacle in front. Ejecting driver.\r\n");
-                    break;
-                }
-                
-                CyDelay(30);
+//                if(getDistance(2) < 50)
+//                {
+//                    stopDriving();
+//                    UART_1_PutString("Obstacle in front. Ejecting driver.\r\n");
+//                    break;
+//                }
+//                
+//                CyDelay(30);
                 
             }
             
-            if(enoughSpace == true)
+            while(enoughSpace == true)
             {
                 CyDelay(1000);
                 UART_1_PutString("Initiating parkingsequence\r\n");

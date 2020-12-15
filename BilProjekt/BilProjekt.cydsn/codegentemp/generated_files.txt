@@ -62,6 +62,11 @@
   <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\Pin_SensorFront_Echo_aliases.h" value="HEADER;;;;;Pin_SensorFront_Echo" />
   <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\Pin_SensorFront_Echo.c" value="SOURCE_C;CortexM3;;;;Pin_SensorFront_Echo" />
   <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\Pin_SensorFront_Echo.h" value="HEADER;;;;;Pin_SensorFront_Echo" />
+  <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\Pin_interrupt_aliases.h" value="HEADER;;;;;Pin_interrupt" />
+  <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\Pin_interrupt.c" value="SOURCE_C;CortexM3;;;;Pin_interrupt" />
+  <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\Pin_interrupt.h" value="HEADER;;;;;Pin_interrupt" />
+  <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\isr_RPi.c" value="SOURCE_C;CortexM3;;;;isr_RPi" />
+  <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\isr_RPi.h" value="HEADER;;;;;isr_RPi" />
   <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\UART_1_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_1_IntClock" />
   <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\UART_1_IntClock.h" value="HEADER;;;;;UART_1_IntClock" />
   <file name="\\Mac\Home\Documents\Projekt\BilProjekt\BilProjekt.cydsn\codegentemp\cm3gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />

@@ -1,0 +1,8 @@
+Park-a-lot system started.
+Set direction: forwards
+Driving forwards. Looking for space
+Not enough space
+Not enough space
+Not enough space
+Not enough spaStop
+System stopped by user!!!ce

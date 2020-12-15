@@ -35,10 +35,10 @@ int main(void)
         cm = (getDistance()-2.8214)/4.6726;
         float count = getDistance();
         
-        snprintf(buffer,255, "The distance for sensor: %.2f cm \n\r", count);
+        snprintf(buffer,255, "The distance for sensor: %.2f cm \n\r", cm);
         UART_1_PutString(buffer); 
         
-        CyDelay(1000);
+        CyDelay(500);
     }
 }
 
@@ -50,7 +50,7 @@ int getDistance()
     CyDelayUs(2);
 
     Pin_S1_Trig_Write(1);
-    CyDelayUs(10);
+    CyDelayUs(100);
     Pin_S1_Trig_Write(0);
 
     while(Pin_S1_Echo_Read() != 1) //wait until return pulse starts 

@@ -1,0 +1,729 @@
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"interruptRoutine.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.GPIO_ISR,"ax",%progbits
+  20              		.align	2
+  21              		.global	GPIO_ISR
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	GPIO_ISR, %function
+  25              	GPIO_ISR:
+  26              	.LFB63:
+  27              		.file 1 "interruptRoutine.c"
+   1:interruptRoutine.c **** /* ========================================
+   2:interruptRoutine.c ****  *
+   3:interruptRoutine.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:interruptRoutine.c ****  * All Rights Reserved
+   5:interruptRoutine.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:interruptRoutine.c ****  *
+   7:interruptRoutine.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:interruptRoutine.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:interruptRoutine.c ****  *
+  10:interruptRoutine.c ****  * ========================================
+  11:interruptRoutine.c **** */
+  12:interruptRoutine.c **** 
+  13:interruptRoutine.c **** #include "interruptRoutine.h"
+  14:interruptRoutine.c **** #include <stdbool.h>
+  15:interruptRoutine.c **** #include "DCControl.h"
+  16:interruptRoutine.c **** #include "servoControl.h"
+  17:interruptRoutine.c **** 
+  18:interruptRoutine.c **** #define ISR_PIN 0x01
+  19:interruptRoutine.c **** 
+  20:interruptRoutine.c **** CY_ISR(GPIO_ISR)
+  21:interruptRoutine.c **** {
+  28              		.loc 1 21 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  22:interruptRoutine.c **** 	uint8 InterruptState = Pin_interrupt_ClearInterrupt();
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 2
+
+
+  36              		.loc 1 22 0
+  37 0002 FFF7FEFF 		bl	Pin_interrupt_ClearInterrupt
+  38              	.LVL0:
+  23:interruptRoutine.c **** 	if(InterruptState == ISR_PIN)
+  39              		.loc 1 23 0
+  40 0006 0128     		cmp	r0, #1
+  41 0008 0BD1     		bne	.L1
+  42              	.LBB2:
+  24:interruptRoutine.c **** 	{
+  25:interruptRoutine.c **** 		extern bool driving;
+  26:interruptRoutine.c ****         extern bool enoughSpace;
+  27:interruptRoutine.c ****         driving = false;
+  43              		.loc 1 27 0
+  44 000a 0023     		movs	r3, #0
+  45 000c 054A     		ldr	r2, .L4
+  46 000e 1370     		strb	r3, [r2]
+  28:interruptRoutine.c ****         enoughSpace = false;
+  47              		.loc 1 28 0
+  48 0010 054A     		ldr	r2, .L4+4
+  49 0012 1370     		strb	r3, [r2]
+  29:interruptRoutine.c ****         stopDriving();
+  50              		.loc 1 29 0
+  51 0014 FFF7FEFF 		bl	stopDriving
+  52              	.LVL1:
+  30:interruptRoutine.c ****         middlePos();
+  53              		.loc 1 30 0
+  54 0018 FFF7FEFF 		bl	middlePos
+  55              	.LVL2:
+  31:interruptRoutine.c ****         UART_1_PutString("System stopped by user!!!");
+  56              		.loc 1 31 0
+  57 001c 0348     		ldr	r0, .L4+8
+  58 001e FFF7FEFF 		bl	UART_1_PutString
+  59              	.LVL3:
+  60              	.L1:
+  61 0022 08BD     		pop	{r3, pc}
+  62              	.L5:
+  63              		.align	2
+  64              	.L4:
+  65 0024 00000000 		.word	driving
+  66 0028 00000000 		.word	enoughSpace
+  67 002c 00000000 		.word	.LC0
+  68              	.LBE2:
+  69              		.cfi_endproc
+  70              	.LFE63:
+  71              		.size	GPIO_ISR, .-GPIO_ISR
+  72              		.section	.rodata.str1.4,"aMS",%progbits,1
+  73              		.align	2
+  74              	.LC0:
+  75 0000 53797374 		.ascii	"System stopped by user!!!\000"
+  75      656D2073 
+  75      746F7070 
+  75      65642062 
+  75      79207573 
+  76              		.text
+  77              	.Letext0:
+  78              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+  79              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 3
+
+
+  80              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+  81              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+  82              		.file 6 "DCControl.h"
+  83              		.file 7 "servoControl.h"
+  84              		.file 8 "Generated_Source\\PSoC5/UART_1.h"
+  85              		.file 9 "Generated_Source\\PSoC5/Pin_interrupt.h"
+  86              		.section	.debug_info,"",%progbits
+  87              	.Ldebug_info0:
+  88 0000 7E010000 		.4byte	0x17e
+  89 0004 0400     		.2byte	0x4
+  90 0006 00000000 		.4byte	.Ldebug_abbrev0
+  91 000a 04       		.byte	0x4
+  92 000b 01       		.uleb128 0x1
+  93 000c 40000000 		.4byte	.LASF25
+  94 0010 0C       		.byte	0xc
+  95 0011 0A000000 		.4byte	.LASF26
+  96 0015 73010000 		.4byte	.LASF27
+  97 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  98 001d 00000000 		.4byte	0
+  99 0021 00000000 		.4byte	.Ldebug_line0
+ 100 0025 02       		.uleb128 0x2
+ 101 0026 01       		.byte	0x1
+ 102 0027 06       		.byte	0x6
+ 103 0028 F5010000 		.4byte	.LASF0
+ 104 002c 02       		.uleb128 0x2
+ 105 002d 01       		.byte	0x1
+ 106 002e 08       		.byte	0x8
+ 107 002f 32000000 		.4byte	.LASF1
+ 108 0033 02       		.uleb128 0x2
+ 109 0034 02       		.byte	0x2
+ 110 0035 05       		.byte	0x5
+ 111 0036 D0010000 		.4byte	.LASF2
+ 112 003a 02       		.uleb128 0x2
+ 113 003b 02       		.byte	0x2
+ 114 003c 07       		.byte	0x7
+ 115 003d FD000000 		.4byte	.LASF3
+ 116 0041 03       		.uleb128 0x3
+ 117 0042 00000000 		.4byte	.LASF9
+ 118 0046 02       		.byte	0x2
+ 119 0047 3F       		.byte	0x3f
+ 120 0048 4C000000 		.4byte	0x4c
+ 121 004c 02       		.uleb128 0x2
+ 122 004d 04       		.byte	0x4
+ 123 004e 05       		.byte	0x5
+ 124 004f E0010000 		.4byte	.LASF4
+ 125 0053 02       		.uleb128 0x2
+ 126 0054 04       		.byte	0x4
+ 127 0055 07       		.byte	0x7
+ 128 0056 EB000000 		.4byte	.LASF5
+ 129 005a 02       		.uleb128 0x2
+ 130 005b 08       		.byte	0x8
+ 131 005c 05       		.byte	0x5
+ 132 005d BD010000 		.4byte	.LASF6
+ 133 0061 02       		.uleb128 0x2
+ 134 0062 08       		.byte	0x8
+ 135 0063 07       		.byte	0x7
+ 136 0064 5C010000 		.4byte	.LASF7
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 4
+
+
+ 137 0068 04       		.uleb128 0x4
+ 138 0069 04       		.byte	0x4
+ 139 006a 05       		.byte	0x5
+ 140 006b 696E7400 		.ascii	"int\000"
+ 141 006f 02       		.uleb128 0x2
+ 142 0070 04       		.byte	0x4
+ 143 0071 07       		.byte	0x7
+ 144 0072 43010000 		.4byte	.LASF8
+ 145 0076 03       		.uleb128 0x3
+ 146 0077 AC010000 		.4byte	.LASF10
+ 147 007b 03       		.byte	0x3
+ 148 007c 2C       		.byte	0x2c
+ 149 007d 41000000 		.4byte	0x41
+ 150 0081 05       		.uleb128 0x5
+ 151 0082 DA010000 		.4byte	.LASF11
+ 152 0086 04       		.byte	0x4
+ 153 0087 E401     		.2byte	0x1e4
+ 154 0089 2C000000 		.4byte	0x2c
+ 155 008d 02       		.uleb128 0x2
+ 156 008e 04       		.byte	0x4
+ 157 008f 04       		.byte	0x4
+ 158 0090 2C000000 		.4byte	.LASF12
+ 159 0094 02       		.uleb128 0x2
+ 160 0095 08       		.byte	0x8
+ 161 0096 04       		.byte	0x4
+ 162 0097 32010000 		.4byte	.LASF13
+ 163 009b 02       		.uleb128 0x2
+ 164 009c 01       		.byte	0x1
+ 165 009d 08       		.byte	0x8
+ 166 009e CB010000 		.4byte	.LASF14
+ 167 00a2 02       		.uleb128 0x2
+ 168 00a3 08       		.byte	0x8
+ 169 00a4 04       		.byte	0x4
+ 170 00a5 E9010000 		.4byte	.LASF15
+ 171 00a9 02       		.uleb128 0x2
+ 172 00aa 04       		.byte	0x4
+ 173 00ab 07       		.byte	0x7
+ 174 00ac B4010000 		.4byte	.LASF16
+ 175 00b0 06       		.uleb128 0x6
+ 176 00b1 29010000 		.4byte	.LASF28
+ 177 00b5 01       		.byte	0x1
+ 178 00b6 14       		.byte	0x14
+ 179 00b7 00000000 		.4byte	.LFB63
+ 180 00bb 30000000 		.4byte	.LFE63-.LFB63
+ 181 00bf 01       		.uleb128 0x1
+ 182 00c0 9C       		.byte	0x9c
+ 183 00c1 27010000 		.4byte	0x127
+ 184 00c5 07       		.uleb128 0x7
+ 185 00c6 1D000000 		.4byte	.LASF29
+ 186 00ca 01       		.byte	0x1
+ 187 00cb 16       		.byte	0x16
+ 188 00cc 81000000 		.4byte	0x81
+ 189 00d0 00000000 		.4byte	.LLST0
+ 190 00d4 08       		.uleb128 0x8
+ 191 00d5 0A000000 		.4byte	.LBB2
+ 192 00d9 26000000 		.4byte	.LBE2-.LBB2
+ 193 00dd 1D010000 		.4byte	0x11d
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 5
+
+
+ 194 00e1 09       		.uleb128 0x9
+ 195 00e2 01020000 		.4byte	.LASF17
+ 196 00e6 01       		.byte	0x1
+ 197 00e7 19       		.byte	0x19
+ 198 00e8 27010000 		.4byte	0x127
+ 199 00ec 09       		.uleb128 0x9
+ 200 00ed 10010000 		.4byte	.LASF18
+ 201 00f1 01       		.byte	0x1
+ 202 00f2 1A       		.byte	0x1a
+ 203 00f3 27010000 		.4byte	0x127
+ 204 00f7 0A       		.uleb128 0xa
+ 205 00f8 18000000 		.4byte	.LVL1
+ 206 00fc 55010000 		.4byte	0x155
+ 207 0100 0A       		.uleb128 0xa
+ 208 0101 1C000000 		.4byte	.LVL2
+ 209 0105 60010000 		.4byte	0x160
+ 210 0109 0B       		.uleb128 0xb
+ 211 010a 22000000 		.4byte	.LVL3
+ 212 010e 6B010000 		.4byte	0x16b
+ 213 0112 0C       		.uleb128 0xc
+ 214 0113 01       		.uleb128 0x1
+ 215 0114 50       		.byte	0x50
+ 216 0115 05       		.uleb128 0x5
+ 217 0116 03       		.byte	0x3
+ 218 0117 00000000 		.4byte	.LC0
+ 219 011b 00       		.byte	0
+ 220 011c 00       		.byte	0
+ 221 011d 0A       		.uleb128 0xa
+ 222 011e 06000000 		.4byte	.LVL0
+ 223 0122 76010000 		.4byte	0x176
+ 224 0126 00       		.byte	0
+ 225 0127 02       		.uleb128 0x2
+ 226 0128 01       		.byte	0x1
+ 227 0129 02       		.byte	0x2
+ 228 012a 1A020000 		.4byte	.LASF19
+ 229 012e 0D       		.uleb128 0xd
+ 230 012f 1C010000 		.4byte	.LASF20
+ 231 0133 05       		.byte	0x5
+ 232 0134 1207     		.2byte	0x712
+ 233 0136 3A010000 		.4byte	0x13a
+ 234 013a 0E       		.uleb128 0xe
+ 235 013b 76000000 		.4byte	0x76
+ 236 013f 09       		.uleb128 0x9
+ 237 0140 01020000 		.4byte	.LASF17
+ 238 0144 01       		.byte	0x1
+ 239 0145 19       		.byte	0x19
+ 240 0146 27010000 		.4byte	0x127
+ 241 014a 09       		.uleb128 0x9
+ 242 014b 10010000 		.4byte	.LASF18
+ 243 014f 01       		.byte	0x1
+ 244 0150 1A       		.byte	0x1a
+ 245 0151 27010000 		.4byte	0x127
+ 246 0155 0F       		.uleb128 0xf
+ 247 0156 50010000 		.4byte	.LASF21
+ 248 015a 50010000 		.4byte	.LASF21
+ 249 015e 06       		.byte	0x6
+ 250 015f 0F       		.byte	0xf
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 6
+
+
+ 251 0160 0F       		.uleb128 0xf
+ 252 0161 39010000 		.4byte	.LASF22
+ 253 0165 39010000 		.4byte	.LASF22
+ 254 0169 07       		.byte	0x7
+ 255 016a 11       		.byte	0x11
+ 256 016b 0F       		.uleb128 0xf
+ 257 016c 09020000 		.4byte	.LASF23
+ 258 0170 09020000 		.4byte	.LASF23
+ 259 0174 08       		.byte	0x8
+ 260 0175 8B       		.byte	0x8b
+ 261 0176 0F       		.uleb128 0xf
+ 262 0177 CE000000 		.4byte	.LASF24
+ 263 017b CE000000 		.4byte	.LASF24
+ 264 017f 09       		.byte	0x9
+ 265 0180 2B       		.byte	0x2b
+ 266 0181 00       		.byte	0
+ 267              		.section	.debug_abbrev,"",%progbits
+ 268              	.Ldebug_abbrev0:
+ 269 0000 01       		.uleb128 0x1
+ 270 0001 11       		.uleb128 0x11
+ 271 0002 01       		.byte	0x1
+ 272 0003 25       		.uleb128 0x25
+ 273 0004 0E       		.uleb128 0xe
+ 274 0005 13       		.uleb128 0x13
+ 275 0006 0B       		.uleb128 0xb
+ 276 0007 03       		.uleb128 0x3
+ 277 0008 0E       		.uleb128 0xe
+ 278 0009 1B       		.uleb128 0x1b
+ 279 000a 0E       		.uleb128 0xe
+ 280 000b 55       		.uleb128 0x55
+ 281 000c 17       		.uleb128 0x17
+ 282 000d 11       		.uleb128 0x11
+ 283 000e 01       		.uleb128 0x1
+ 284 000f 10       		.uleb128 0x10
+ 285 0010 17       		.uleb128 0x17
+ 286 0011 00       		.byte	0
+ 287 0012 00       		.byte	0
+ 288 0013 02       		.uleb128 0x2
+ 289 0014 24       		.uleb128 0x24
+ 290 0015 00       		.byte	0
+ 291 0016 0B       		.uleb128 0xb
+ 292 0017 0B       		.uleb128 0xb
+ 293 0018 3E       		.uleb128 0x3e
+ 294 0019 0B       		.uleb128 0xb
+ 295 001a 03       		.uleb128 0x3
+ 296 001b 0E       		.uleb128 0xe
+ 297 001c 00       		.byte	0
+ 298 001d 00       		.byte	0
+ 299 001e 03       		.uleb128 0x3
+ 300 001f 16       		.uleb128 0x16
+ 301 0020 00       		.byte	0
+ 302 0021 03       		.uleb128 0x3
+ 303 0022 0E       		.uleb128 0xe
+ 304 0023 3A       		.uleb128 0x3a
+ 305 0024 0B       		.uleb128 0xb
+ 306 0025 3B       		.uleb128 0x3b
+ 307 0026 0B       		.uleb128 0xb
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 7
+
+
+ 308 0027 49       		.uleb128 0x49
+ 309 0028 13       		.uleb128 0x13
+ 310 0029 00       		.byte	0
+ 311 002a 00       		.byte	0
+ 312 002b 04       		.uleb128 0x4
+ 313 002c 24       		.uleb128 0x24
+ 314 002d 00       		.byte	0
+ 315 002e 0B       		.uleb128 0xb
+ 316 002f 0B       		.uleb128 0xb
+ 317 0030 3E       		.uleb128 0x3e
+ 318 0031 0B       		.uleb128 0xb
+ 319 0032 03       		.uleb128 0x3
+ 320 0033 08       		.uleb128 0x8
+ 321 0034 00       		.byte	0
+ 322 0035 00       		.byte	0
+ 323 0036 05       		.uleb128 0x5
+ 324 0037 16       		.uleb128 0x16
+ 325 0038 00       		.byte	0
+ 326 0039 03       		.uleb128 0x3
+ 327 003a 0E       		.uleb128 0xe
+ 328 003b 3A       		.uleb128 0x3a
+ 329 003c 0B       		.uleb128 0xb
+ 330 003d 3B       		.uleb128 0x3b
+ 331 003e 05       		.uleb128 0x5
+ 332 003f 49       		.uleb128 0x49
+ 333 0040 13       		.uleb128 0x13
+ 334 0041 00       		.byte	0
+ 335 0042 00       		.byte	0
+ 336 0043 06       		.uleb128 0x6
+ 337 0044 2E       		.uleb128 0x2e
+ 338 0045 01       		.byte	0x1
+ 339 0046 3F       		.uleb128 0x3f
+ 340 0047 19       		.uleb128 0x19
+ 341 0048 03       		.uleb128 0x3
+ 342 0049 0E       		.uleb128 0xe
+ 343 004a 3A       		.uleb128 0x3a
+ 344 004b 0B       		.uleb128 0xb
+ 345 004c 3B       		.uleb128 0x3b
+ 346 004d 0B       		.uleb128 0xb
+ 347 004e 27       		.uleb128 0x27
+ 348 004f 19       		.uleb128 0x19
+ 349 0050 11       		.uleb128 0x11
+ 350 0051 01       		.uleb128 0x1
+ 351 0052 12       		.uleb128 0x12
+ 352 0053 06       		.uleb128 0x6
+ 353 0054 40       		.uleb128 0x40
+ 354 0055 18       		.uleb128 0x18
+ 355 0056 9742     		.uleb128 0x2117
+ 356 0058 19       		.uleb128 0x19
+ 357 0059 01       		.uleb128 0x1
+ 358 005a 13       		.uleb128 0x13
+ 359 005b 00       		.byte	0
+ 360 005c 00       		.byte	0
+ 361 005d 07       		.uleb128 0x7
+ 362 005e 34       		.uleb128 0x34
+ 363 005f 00       		.byte	0
+ 364 0060 03       		.uleb128 0x3
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 8
+
+
+ 365 0061 0E       		.uleb128 0xe
+ 366 0062 3A       		.uleb128 0x3a
+ 367 0063 0B       		.uleb128 0xb
+ 368 0064 3B       		.uleb128 0x3b
+ 369 0065 0B       		.uleb128 0xb
+ 370 0066 49       		.uleb128 0x49
+ 371 0067 13       		.uleb128 0x13
+ 372 0068 02       		.uleb128 0x2
+ 373 0069 17       		.uleb128 0x17
+ 374 006a 00       		.byte	0
+ 375 006b 00       		.byte	0
+ 376 006c 08       		.uleb128 0x8
+ 377 006d 0B       		.uleb128 0xb
+ 378 006e 01       		.byte	0x1
+ 379 006f 11       		.uleb128 0x11
+ 380 0070 01       		.uleb128 0x1
+ 381 0071 12       		.uleb128 0x12
+ 382 0072 06       		.uleb128 0x6
+ 383 0073 01       		.uleb128 0x1
+ 384 0074 13       		.uleb128 0x13
+ 385 0075 00       		.byte	0
+ 386 0076 00       		.byte	0
+ 387 0077 09       		.uleb128 0x9
+ 388 0078 34       		.uleb128 0x34
+ 389 0079 00       		.byte	0
+ 390 007a 03       		.uleb128 0x3
+ 391 007b 0E       		.uleb128 0xe
+ 392 007c 3A       		.uleb128 0x3a
+ 393 007d 0B       		.uleb128 0xb
+ 394 007e 3B       		.uleb128 0x3b
+ 395 007f 0B       		.uleb128 0xb
+ 396 0080 49       		.uleb128 0x49
+ 397 0081 13       		.uleb128 0x13
+ 398 0082 3F       		.uleb128 0x3f
+ 399 0083 19       		.uleb128 0x19
+ 400 0084 3C       		.uleb128 0x3c
+ 401 0085 19       		.uleb128 0x19
+ 402 0086 00       		.byte	0
+ 403 0087 00       		.byte	0
+ 404 0088 0A       		.uleb128 0xa
+ 405 0089 898201   		.uleb128 0x4109
+ 406 008c 00       		.byte	0
+ 407 008d 11       		.uleb128 0x11
+ 408 008e 01       		.uleb128 0x1
+ 409 008f 31       		.uleb128 0x31
+ 410 0090 13       		.uleb128 0x13
+ 411 0091 00       		.byte	0
+ 412 0092 00       		.byte	0
+ 413 0093 0B       		.uleb128 0xb
+ 414 0094 898201   		.uleb128 0x4109
+ 415 0097 01       		.byte	0x1
+ 416 0098 11       		.uleb128 0x11
+ 417 0099 01       		.uleb128 0x1
+ 418 009a 31       		.uleb128 0x31
+ 419 009b 13       		.uleb128 0x13
+ 420 009c 00       		.byte	0
+ 421 009d 00       		.byte	0
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 9
+
+
+ 422 009e 0C       		.uleb128 0xc
+ 423 009f 8A8201   		.uleb128 0x410a
+ 424 00a2 00       		.byte	0
+ 425 00a3 02       		.uleb128 0x2
+ 426 00a4 18       		.uleb128 0x18
+ 427 00a5 9142     		.uleb128 0x2111
+ 428 00a7 18       		.uleb128 0x18
+ 429 00a8 00       		.byte	0
+ 430 00a9 00       		.byte	0
+ 431 00aa 0D       		.uleb128 0xd
+ 432 00ab 34       		.uleb128 0x34
+ 433 00ac 00       		.byte	0
+ 434 00ad 03       		.uleb128 0x3
+ 435 00ae 0E       		.uleb128 0xe
+ 436 00af 3A       		.uleb128 0x3a
+ 437 00b0 0B       		.uleb128 0xb
+ 438 00b1 3B       		.uleb128 0x3b
+ 439 00b2 05       		.uleb128 0x5
+ 440 00b3 49       		.uleb128 0x49
+ 441 00b4 13       		.uleb128 0x13
+ 442 00b5 3F       		.uleb128 0x3f
+ 443 00b6 19       		.uleb128 0x19
+ 444 00b7 3C       		.uleb128 0x3c
+ 445 00b8 19       		.uleb128 0x19
+ 446 00b9 00       		.byte	0
+ 447 00ba 00       		.byte	0
+ 448 00bb 0E       		.uleb128 0xe
+ 449 00bc 35       		.uleb128 0x35
+ 450 00bd 00       		.byte	0
+ 451 00be 49       		.uleb128 0x49
+ 452 00bf 13       		.uleb128 0x13
+ 453 00c0 00       		.byte	0
+ 454 00c1 00       		.byte	0
+ 455 00c2 0F       		.uleb128 0xf
+ 456 00c3 2E       		.uleb128 0x2e
+ 457 00c4 00       		.byte	0
+ 458 00c5 3F       		.uleb128 0x3f
+ 459 00c6 19       		.uleb128 0x19
+ 460 00c7 3C       		.uleb128 0x3c
+ 461 00c8 19       		.uleb128 0x19
+ 462 00c9 6E       		.uleb128 0x6e
+ 463 00ca 0E       		.uleb128 0xe
+ 464 00cb 03       		.uleb128 0x3
+ 465 00cc 0E       		.uleb128 0xe
+ 466 00cd 3A       		.uleb128 0x3a
+ 467 00ce 0B       		.uleb128 0xb
+ 468 00cf 3B       		.uleb128 0x3b
+ 469 00d0 0B       		.uleb128 0xb
+ 470 00d1 00       		.byte	0
+ 471 00d2 00       		.byte	0
+ 472 00d3 00       		.byte	0
+ 473              		.section	.debug_loc,"",%progbits
+ 474              	.Ldebug_loc0:
+ 475              	.LLST0:
+ 476 0000 06000000 		.4byte	.LVL0
+ 477 0004 17000000 		.4byte	.LVL1-1
+ 478 0008 0100     		.2byte	0x1
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 10
+
+
+ 479 000a 50       		.byte	0x50
+ 480 000b 00000000 		.4byte	0
+ 481 000f 00000000 		.4byte	0
+ 482              		.section	.debug_aranges,"",%progbits
+ 483 0000 1C000000 		.4byte	0x1c
+ 484 0004 0200     		.2byte	0x2
+ 485 0006 00000000 		.4byte	.Ldebug_info0
+ 486 000a 04       		.byte	0x4
+ 487 000b 00       		.byte	0
+ 488 000c 0000     		.2byte	0
+ 489 000e 0000     		.2byte	0
+ 490 0010 00000000 		.4byte	.LFB63
+ 491 0014 30000000 		.4byte	.LFE63-.LFB63
+ 492 0018 00000000 		.4byte	0
+ 493 001c 00000000 		.4byte	0
+ 494              		.section	.debug_ranges,"",%progbits
+ 495              	.Ldebug_ranges0:
+ 496 0000 00000000 		.4byte	.LFB63
+ 497 0004 30000000 		.4byte	.LFE63
+ 498 0008 00000000 		.4byte	0
+ 499 000c 00000000 		.4byte	0
+ 500              		.section	.debug_line,"",%progbits
+ 501              	.Ldebug_line0:
+ 502 0000 B4010000 		.section	.debug_str,"MS",%progbits,1
+ 502      02009801 
+ 502      00000201 
+ 502      FB0E0D00 
+ 502      01010101 
+ 503              	.LASF9:
+ 504 0000 5F5F696E 		.ascii	"__int32_t\000"
+ 504      7433325F 
+ 504      7400
+ 505              	.LASF26:
+ 506 000a 696E7465 		.ascii	"interruptRoutine.c\000"
+ 506      72727570 
+ 506      74526F75 
+ 506      74696E65 
+ 506      2E6300
+ 507              	.LASF29:
+ 508 001d 496E7465 		.ascii	"InterruptState\000"
+ 508      72727570 
+ 508      74537461 
+ 508      746500
+ 509              	.LASF12:
+ 510 002c 666C6F61 		.ascii	"float\000"
+ 510      7400
+ 511              	.LASF1:
+ 512 0032 756E7369 		.ascii	"unsigned char\000"
+ 512      676E6564 
+ 512      20636861 
+ 512      7200
+ 513              	.LASF25:
+ 514 0040 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 514      43313120 
+ 514      352E342E 
+ 514      31203230 
+ 514      31363036 
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 11
+
+
+ 515 0073 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 515      20726576 
+ 515      6973696F 
+ 515      6E203233 
+ 515      37373135 
+ 516 00a6 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 516      66756E63 
+ 516      74696F6E 
+ 516      2D736563 
+ 516      74696F6E 
+ 517              	.LASF24:
+ 518 00ce 50696E5F 		.ascii	"Pin_interrupt_ClearInterrupt\000"
+ 518      696E7465 
+ 518      72727570 
+ 518      745F436C 
+ 518      65617249 
+ 519              	.LASF5:
+ 520 00eb 6C6F6E67 		.ascii	"long unsigned int\000"
+ 520      20756E73 
+ 520      69676E65 
+ 520      6420696E 
+ 520      7400
+ 521              	.LASF3:
+ 522 00fd 73686F72 		.ascii	"short unsigned int\000"
+ 522      7420756E 
+ 522      7369676E 
+ 522      65642069 
+ 522      6E7400
+ 523              	.LASF18:
+ 524 0110 656E6F75 		.ascii	"enoughSpace\000"
+ 524      67685370 
+ 524      61636500 
+ 525              	.LASF20:
+ 526 011c 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 526      52784275 
+ 526      66666572 
+ 526      00
+ 527              	.LASF28:
+ 528 0129 4750494F 		.ascii	"GPIO_ISR\000"
+ 528      5F495352 
+ 528      00
+ 529              	.LASF13:
+ 530 0132 646F7562 		.ascii	"double\000"
+ 530      6C6500
+ 531              	.LASF22:
+ 532 0139 6D696464 		.ascii	"middlePos\000"
+ 532      6C65506F 
+ 532      7300
+ 533              	.LASF8:
+ 534 0143 756E7369 		.ascii	"unsigned int\000"
+ 534      676E6564 
+ 534      20696E74 
+ 534      00
+ 535              	.LASF21:
+ 536 0150 73746F70 		.ascii	"stopDriving\000"
+ 536      44726976 
+ 536      696E6700 
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 12
+
+
+ 537              	.LASF7:
+ 538 015c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 538      206C6F6E 
+ 538      6720756E 
+ 538      7369676E 
+ 538      65642069 
+ 539              	.LASF27:
+ 540 0173 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Documents\\Projekt\\BilProjekt\\BilP"
+ 540      635C486F 
+ 540      6D655C44 
+ 540      6F63756D 
+ 540      656E7473 
+ 541 019f 726F6A65 		.ascii	"rojekt.cydsn\000"
+ 541      6B742E63 
+ 541      7964736E 
+ 541      00
+ 542              	.LASF10:
+ 543 01ac 696E7433 		.ascii	"int32_t\000"
+ 543      325F7400 
+ 544              	.LASF16:
+ 545 01b4 73697A65 		.ascii	"sizetype\000"
+ 545      74797065 
+ 545      00
+ 546              	.LASF6:
+ 547 01bd 6C6F6E67 		.ascii	"long long int\000"
+ 547      206C6F6E 
+ 547      6720696E 
+ 547      7400
+ 548              	.LASF14:
+ 549 01cb 63686172 		.ascii	"char\000"
+ 549      00
+ 550              	.LASF2:
+ 551 01d0 73686F72 		.ascii	"short int\000"
+ 551      7420696E 
+ 551      7400
+ 552              	.LASF11:
+ 553 01da 75696E74 		.ascii	"uint8\000"
+ 553      3800
+ 554              	.LASF4:
+ 555 01e0 6C6F6E67 		.ascii	"long int\000"
+ 555      20696E74 
+ 555      00
+ 556              	.LASF15:
+ 557 01e9 6C6F6E67 		.ascii	"long double\000"
+ 557      20646F75 
+ 557      626C6500 
+ 558              	.LASF0:
+ 559 01f5 7369676E 		.ascii	"signed char\000"
+ 559      65642063 
+ 559      68617200 
+ 560              	.LASF17:
+ 561 0201 64726976 		.ascii	"driving\000"
+ 561      696E6700 
+ 562              	.LASF23:
+ 563 0209 55415254 		.ascii	"UART_1_PutString\000"
+ 563      5F315F50 
+ 563      75745374 
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cciTUms1.s 			page 13
+
+
+ 563      72696E67 
+ 563      00
+ 564              	.LASF19:
+ 565 021a 5F426F6F 		.ascii	"_Bool\000"
+ 565      6C00
+ 566              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

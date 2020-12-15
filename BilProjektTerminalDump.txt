@@ -1,0 +1,18 @@
+Set direction: forwards
+Driving forwards. Looking for space
+Not enough space
+Not enough space
+Not enough space
+Not enough space
+Stop
+Parking space found
+Initiating parkingsequence
+Turning wheels right
+Set direction: backwards
+Driving backwards
+Stop
+Turning wheels left
+Set direction: backwards
+Driving backwards again
+Stop
+Parking done

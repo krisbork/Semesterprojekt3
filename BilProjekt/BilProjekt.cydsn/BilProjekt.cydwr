@@ -255,6 +255,7 @@
       <Data key="1a73d7cb-f549-445e-ac07-226d94608898" value="Pin_PWM_DC" />
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="Pin_SensorRight_Echo" />
       <Data key="8f3da12a-1264-41b2-a0b5-5e0207a2d1d6" value="Pin_SensorFront_Echo" />
+      <Data key="415e8288-6bec-4985-a285-9189aa89cee8" value="Pin_interrupt" />
       <Data key="954a4955-e221-4486-88d5-d106733b2cdb" value="Pin_1_6" />
       <Data key="152492c3-d266-492d-bf91-b7c7f9ea207d" value="Pin_SensorRight_Trig" />
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="Rx_1" />
@@ -3366,6 +3367,11 @@
     <Group key="8f3da12a-1264-41b2-a0b5-5e0207a2d1d6">
       <Group key="0">
         <Data key="Port Format" value="3,7" />
+      </Group>
+    </Group>
+    <Group key="415e8288-6bec-4985-a285-9189aa89cee8">
+      <Group key="0">
+        <Data key="Port Format" value="3,4" />
       </Group>
     </Group>
     <Group key="954a4955-e221-4486-88d5-d106733b2cdb">

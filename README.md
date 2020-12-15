@@ -1,1 +1,1 @@
-# projekt3
+# Github repository til semesterprojekt 3

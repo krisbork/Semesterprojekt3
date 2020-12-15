@@ -1,5 +1,5 @@
 # BilProjekt
-# 2020-12-11 15:43:01Z
+# 2020-12-14 21:26:13Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -18,3 +18,4 @@ set_io "Pin_SensorRight_Echo(0)" iocell 2 7
 set_io "Pin_PWM_Servo(0)" iocell 2 2
 set_io "Pin_SensorFront_Trig(0)" iocell 3 6
 set_io "Pin_SensorFront_Echo(0)" iocell 3 7
+set_io "Pin_interrupt(0)" iocell 3 4

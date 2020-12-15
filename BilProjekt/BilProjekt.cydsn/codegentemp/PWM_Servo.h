@@ -227,7 +227,7 @@ void PWM_Servo_RestoreConfig(void) ;
 *         Initialization Values
 **************************************/
 #define PWM_Servo_INIT_PERIOD_VALUE          (20000u)
-#define PWM_Servo_INIT_COMPARE_VALUE1        (1000u)
+#define PWM_Servo_INIT_COMPARE_VALUE1        (1500u)
 #define PWM_Servo_INIT_COMPARE_VALUE2        (63u)
 #define PWM_Servo_INIT_INTERRUPTS_MODE       (uint8)(((uint8)(0u <<   \
                                                     PWM_Servo_STATUS_TC_INT_EN_MASK_SHIFT)) | \

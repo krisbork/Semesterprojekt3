@@ -2,7 +2,7 @@
 --	Conversion of Ultrasonic1sensor.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri Dec 11 15:22:31 2020
+--	Mon Dec 14 23:16:02 2020
 --
 
 USE cypress.cypress.all;
