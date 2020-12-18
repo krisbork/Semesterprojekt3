@@ -7,12 +7,11 @@
 <wrkspc_folders />
 <files />
 <projects>
-<v>.\Ultrasonic4sensor.cydsn\Ultrasonic4sensor.cyprj</v>
 <v>.\Ultrasonic1sensor.cydsn\Ultrasonic1sensor.cyprj</v>
 </projects>
 <workspace_id v="27c1a36c-65f3-49ba-973d-59fa500dd9eb" />
-<WriteAppVersionLastSavedWith v="4.2.0.641" />
-<WriteAppMarketingVersionLastSavedWith v="4.2" />
+<WriteAppVersionLastSavedWith v="4.3.0.1445" />
+<WriteAppMarketingVersionLastSavedWith v="4.3" />
 <CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize+CyPrjDependencyList" version="4">
 <wrkspc_dependencies />
 </CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316>

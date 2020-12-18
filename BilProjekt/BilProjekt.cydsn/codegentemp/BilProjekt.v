@@ -1,6 +1,6 @@
 // ======================================================================
 // BilProjekt.v generated from TopDesign.cysch
-// 12/14/2020 at 22:26
+// 12/17/2020 at 10:59
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -890,7 +890,7 @@ module top ;
 		#(.id("8cb4f74f-6b98-4cec-8346-84bd969200cc"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("20000000000"),
+		  .period("50000000000"),
 		  .is_direct(0),
 		  .is_digital(1))
 		Clock_1

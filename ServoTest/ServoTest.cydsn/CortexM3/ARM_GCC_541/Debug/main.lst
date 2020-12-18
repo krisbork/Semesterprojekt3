@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 1
 
 
    1              		.syntax unified
@@ -36,62 +36,63 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
    6:main.c        ****  *
    7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
    8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
-   9:main.c        ****  *
-  10:main.c        ****  * ========================================
-  11:main.c        **** */
-  12:main.c        **** #include "project.h"
-  13:main.c        **** #include <stdint.h>
-  14:main.c        **** 
-  15:main.c        **** CY_ISR_PROTO(ISR_UART_rx_handler);
-  16:main.c        **** 
-  17:main.c        **** void handleByteReceived(uint8_t byteReceived);
-  18:main.c        **** 
-  19:main.c        **** void turnRight();
-  20:main.c        **** void turnLeft();
-  21:main.c        **** void middlePos();
-  22:main.c        **** 
-  23:main.c        **** uint8_t compare = 20;
-  24:main.c        **** 
-  25:main.c        **** int main(void)
-  26:main.c        **** {
-  28              		.loc 1 26 0
+   9:main.c        ****  * Kristian Gaardsted Bork
+  10:main.c        ****  *
+  11:main.c        ****  * ========================================
+  12:main.c        **** */
+  13:main.c        **** #include "project.h"
+  14:main.c        **** #include <stdint.h>
+  15:main.c        **** 
+  16:main.c        **** CY_ISR_PROTO(ISR_UART_rx_handler);
+  17:main.c        **** 
+  18:main.c        **** void handleByteReceived(uint8_t byteReceived);
+  19:main.c        **** 
+  20:main.c        **** void turnRight();
+  21:main.c        **** void turnLeft();
+  22:main.c        **** void middlePos();
+  23:main.c        **** 
+  24:main.c        **** uint8_t compare = 20;
+  25:main.c        **** 
+  26:main.c        **** int main(void)
+  27:main.c        **** {
+  28              		.loc 1 27 0
   29              		.cfi_startproc
   30              		@ Volatile: function does not return.
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 2
+
+
   31              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 2
-
-
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33 0000 08B5     		push	{r3, lr}
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 3, -8
   36              		.cfi_offset 14, -4
-  27:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
-  37              		.loc 1 27 0
+  28:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  37              		.loc 1 28 0
   38              		.syntax unified
-  39              	@ 27 "main.c" 1
+  39              	@ 28 "main.c" 1
   40 0002 62B6     		CPSIE   i
   41              	@ 0 "" 2
-  28:main.c        ****     isr_uart_rx_StartEx(ISR_UART_rx_handler);
-  42              		.loc 1 28 0
+  29:main.c        ****     isr_uart_rx_StartEx(ISR_UART_rx_handler);
+  42              		.loc 1 29 0
   43              		.thumb
   44              		.syntax unified
   45 0004 0548     		ldr	r0, .L4
   46 0006 FFF7FEFF 		bl	isr_uart_rx_StartEx
   47              	.LVL0:
-  29:main.c        ****     UART_1_Start();
-  48              		.loc 1 29 0
+  30:main.c        ****     UART_1_Start();
+  48              		.loc 1 30 0
   49 000a FFF7FEFF 		bl	UART_1_Start
   50              	.LVL1:
-  30:main.c        ****     PWM_1_Start();
-  51              		.loc 1 30 0
+  31:main.c        ****     PWM_1_Start();
+  51              		.loc 1 31 0
   52 000e FFF7FEFF 		bl	PWM_1_Start
   53              	.LVL2:
-  31:main.c        **** 
-  32:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-  33:main.c        **** 
-  34:main.c        ****     UART_1_PutString("DC-Motor-PWM application started\r\n");
-  54              		.loc 1 34 0
+  32:main.c        **** 
+  33:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  34:main.c        **** 
+  35:main.c        ****     UART_1_PutString("DC-Motor-PWM application started\r\n");
+  54              		.loc 1 35 0
   55 0012 0348     		ldr	r0, .L4+4
   56 0014 FFF7FEFF 		bl	UART_1_PutString
   57              	.LVL3:
@@ -113,76 +114,76 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
   73              		.type	turnRight, %function
   74              	turnRight:
   75              	.LFB66:
-  35:main.c        ****     
-  36:main.c        ****     for(;;)
-  37:main.c        ****     {
-  38:main.c        **** //        PWM_1_WriteCompare(1000);
-  39:main.c        **** //        CyDelay(1000);
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 3
+  36:main.c        ****     
+  37:main.c        ****     for(;;)
+  38:main.c        ****     {
+  39:main.c        **** //        PWM_1_WriteCompare(1000);
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 3
 
 
-  40:main.c        **** //        PWM_1_WriteCompare(2000);
-  41:main.c        ****     }
-  42:main.c        **** }
-  43:main.c        **** 
-  44:main.c        **** CY_ISR(ISR_UART_rx_handler)
-  45:main.c        **** {
-  46:main.c        ****     uint8_t bytesToRead = UART_1_GetRxBufferSize();
-  47:main.c        ****     while (bytesToRead > 0)
-  48:main.c        ****     {
-  49:main.c        ****         uint8_t byteReceived = UART_1_ReadRxData();
-  50:main.c        ****         UART_1_WriteTxData(byteReceived); // echo back
-  51:main.c        ****         
-  52:main.c        ****         handleByteReceived(byteReceived);
-  53:main.c        ****         
-  54:main.c        ****         bytesToRead--;
-  55:main.c        ****     }
-  56:main.c        **** }
-  57:main.c        **** 
-  58:main.c        **** void handleByteReceived(uint8_t byteReceived)
-  59:main.c        **** {
-  60:main.c        ****     switch(byteReceived)
-  61:main.c        ****     {
-  62:main.c        ****         case '1' :
-  63:main.c        ****         {
-  64:main.c        ****             turnRight();
-  65:main.c        ****             UART_1_PutString("Turn right\r\n");
-  66:main.c        ****         }
-  67:main.c        ****         break;
-  68:main.c        ****         case '2' :
-  69:main.c        ****         {
-  70:main.c        ****             turnLeft();
-  71:main.c        ****             UART_1_PutString("Turn left\r\n");
-  72:main.c        ****         }
-  73:main.c        ****         break;
-  74:main.c        ****         case '3' :
-  75:main.c        ****         {
-  76:main.c        ****             middlePos();
-  77:main.c        ****             UART_1_PutString("Middle position\r\n");
-  78:main.c        ****         }
-  79:main.c        ****         default :
-  80:main.c        ****         {
-  81:main.c        ****             // nothing
-  82:main.c        ****         }
-  83:main.c        ****         break;
-  84:main.c        ****     }
-  85:main.c        **** }
-  86:main.c        **** 
-  87:main.c        **** void turnRight()
-  88:main.c        **** {
-  76              		.loc 1 88 0
+  40:main.c        **** //        CyDelay(1000);
+  41:main.c        **** //        PWM_1_WriteCompare(2000);
+  42:main.c        ****     }
+  43:main.c        **** }
+  44:main.c        **** 
+  45:main.c        **** CY_ISR(ISR_UART_rx_handler)
+  46:main.c        **** {
+  47:main.c        ****     uint8_t bytesToRead = UART_1_GetRxBufferSize();
+  48:main.c        ****     while (bytesToRead > 0)
+  49:main.c        ****     {
+  50:main.c        ****         uint8_t byteReceived = UART_1_ReadRxData();
+  51:main.c        ****         UART_1_WriteTxData(byteReceived); // echo back
+  52:main.c        ****         
+  53:main.c        ****         handleByteReceived(byteReceived);
+  54:main.c        ****         
+  55:main.c        ****         bytesToRead--;
+  56:main.c        ****     }
+  57:main.c        **** }
+  58:main.c        **** 
+  59:main.c        **** void handleByteReceived(uint8_t byteReceived)
+  60:main.c        **** {
+  61:main.c        ****     switch(byteReceived)
+  62:main.c        ****     {
+  63:main.c        ****         case '1' :
+  64:main.c        ****         {
+  65:main.c        ****             turnRight();
+  66:main.c        ****             UART_1_PutString("Turn right\r\n");
+  67:main.c        ****         }
+  68:main.c        ****         break;
+  69:main.c        ****         case '2' :
+  70:main.c        ****         {
+  71:main.c        ****             turnLeft();
+  72:main.c        ****             UART_1_PutString("Turn left\r\n");
+  73:main.c        ****         }
+  74:main.c        ****         break;
+  75:main.c        ****         case '3' :
+  76:main.c        ****         {
+  77:main.c        ****             middlePos();
+  78:main.c        ****             UART_1_PutString("Middle position\r\n");
+  79:main.c        ****         }
+  80:main.c        ****         default :
+  81:main.c        ****         {
+  82:main.c        ****             // nothing
+  83:main.c        ****         }
+  84:main.c        ****         break;
+  85:main.c        ****     }
+  86:main.c        **** }
+  87:main.c        **** 
+  88:main.c        **** void turnRight()
+  89:main.c        **** {
+  76              		.loc 1 89 0
   77              		.cfi_startproc
   78              		@ args = 0, pretend = 0, frame = 0
   79              		@ frame_needed = 0, uses_anonymous_args = 0
   80 0000 08B5     		push	{r3, lr}
   81              		.cfi_def_cfa_offset 8
   82              		.cfi_offset 3, -8
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 4
+
+
   83              		.cfi_offset 14, -4
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 4
-
-
-  89:main.c        ****     PWM_1_WriteCompare(1000);
-  84              		.loc 1 89 0
+  90:main.c        ****     PWM_1_WriteCompare(1000);
+  84              		.loc 1 90 0
   85 0002 4FF47A70 		mov	r0, #1000
   86 0006 FFF7FEFF 		bl	PWM_1_WriteCompare
   87              	.LVL4:
@@ -198,11 +199,11 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
   97              		.type	turnLeft, %function
   98              	turnLeft:
   99              	.LFB67:
-  90:main.c        **** }
-  91:main.c        **** 
-  92:main.c        **** void turnLeft()
-  93:main.c        **** {
- 100              		.loc 1 93 0
+  91:main.c        **** }
+  92:main.c        **** 
+  93:main.c        **** void turnLeft()
+  94:main.c        **** {
+ 100              		.loc 1 94 0
  101              		.cfi_startproc
  102              		@ args = 0, pretend = 0, frame = 0
  103              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -210,8 +211,8 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  105              		.cfi_def_cfa_offset 8
  106              		.cfi_offset 3, -8
  107              		.cfi_offset 14, -4
-  94:main.c        ****     PWM_1_WriteCompare(2000);
- 108              		.loc 1 94 0
+  95:main.c        ****     PWM_1_WriteCompare(2000);
+ 108              		.loc 1 95 0
  109 0002 4FF4FA60 		mov	r0, #2000
  110 0006 FFF7FEFF 		bl	PWM_1_WriteCompare
  111              	.LVL5:
@@ -227,23 +228,23 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  121              		.type	middlePos, %function
  122              	middlePos:
  123              	.LFB68:
-  95:main.c        **** }
-  96:main.c        **** 
-  97:main.c        **** void middlePos()
-  98:main.c        **** {
- 124              		.loc 1 98 0
+  96:main.c        **** }
+  97:main.c        **** 
+  98:main.c        **** void middlePos()
+  99:main.c        **** {
+ 124              		.loc 1 99 0
  125              		.cfi_startproc
  126              		@ args = 0, pretend = 0, frame = 0
  127              		@ frame_needed = 0, uses_anonymous_args = 0
  128 0000 08B5     		push	{r3, lr}
  129              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 5
+
+
  130              		.cfi_offset 3, -8
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 5
-
-
  131              		.cfi_offset 14, -4
-  99:main.c        ****     PWM_1_WriteCompare(1500);
- 132              		.loc 1 99 0
+ 100:main.c        ****     PWM_1_WriteCompare(1500);
+ 132              		.loc 1 100 0
  133 0002 40F2DC50 		movw	r0, #1500
  134 0006 FFF7FEFF 		bl	PWM_1_WriteCompare
  135              	.LVL6:
@@ -259,8 +260,8 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  145              		.type	handleByteReceived, %function
  146              	handleByteReceived:
  147              	.LFB65:
-  59:main.c        ****     switch(byteReceived)
- 148              		.loc 1 59 0
+  60:main.c        ****     switch(byteReceived)
+ 148              		.loc 1 60 0
  149              		.cfi_startproc
  150              		@ args = 0, pretend = 0, frame = 0
  151              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -269,51 +270,51 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  154              		.cfi_def_cfa_offset 8
  155              		.cfi_offset 3, -8
  156              		.cfi_offset 14, -4
-  60:main.c        ****     {
- 157              		.loc 1 60 0
+  61:main.c        ****     {
+ 157              		.loc 1 61 0
  158 0002 3228     		cmp	r0, #50
  159 0004 09D0     		beq	.L14
  160 0006 3328     		cmp	r0, #51
  161 0008 0DD0     		beq	.L15
  162 000a 3128     		cmp	r0, #49
  163 000c 10D1     		bne	.L12
-  64:main.c        ****             UART_1_PutString("Turn right\r\n");
- 164              		.loc 1 64 0
+  65:main.c        ****             UART_1_PutString("Turn right\r\n");
+ 164              		.loc 1 65 0
  165 000e FFF7FEFF 		bl	turnRight
  166              	.LVL8:
-  65:main.c        ****         }
- 167              		.loc 1 65 0
+  66:main.c        ****         }
+ 167              		.loc 1 66 0
  168 0012 0848     		ldr	r0, .L18
  169 0014 FFF7FEFF 		bl	UART_1_PutString
  170              	.LVL9:
-  67:main.c        ****         case '2' :
- 171              		.loc 1 67 0
+  68:main.c        ****         case '2' :
+ 171              		.loc 1 68 0
  172 0018 08BD     		pop	{r3, pc}
  173              	.LVL10:
  174              	.L14:
-  70:main.c        ****             UART_1_PutString("Turn left\r\n");
- 175              		.loc 1 70 0
+  71:main.c        ****             UART_1_PutString("Turn left\r\n");
+ 175              		.loc 1 71 0
  176 001a FFF7FEFF 		bl	turnLeft
  177              	.LVL11:
-  71:main.c        ****         }
- 178              		.loc 1 71 0
+  72:main.c        ****         }
+ 178              		.loc 1 72 0
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 6
+
+
  179 001e 0648     		ldr	r0, .L18+4
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 6
-
-
  180 0020 FFF7FEFF 		bl	UART_1_PutString
  181              	.LVL12:
-  73:main.c        ****         case '3' :
- 182              		.loc 1 73 0
+  74:main.c        ****         case '3' :
+ 182              		.loc 1 74 0
  183 0024 08BD     		pop	{r3, pc}
  184              	.LVL13:
  185              	.L15:
-  76:main.c        ****             UART_1_PutString("Middle position\r\n");
- 186              		.loc 1 76 0
+  77:main.c        ****             UART_1_PutString("Middle position\r\n");
+ 186              		.loc 1 77 0
  187 0026 FFF7FEFF 		bl	middlePos
  188              	.LVL14:
-  77:main.c        ****         }
- 189              		.loc 1 77 0
+  78:main.c        ****         }
+ 189              		.loc 1 78 0
  190 002a 0448     		ldr	r0, .L18+8
  191 002c FFF7FEFF 		bl	UART_1_PutString
  192              	.LVL15:
@@ -336,8 +337,8 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  209              		.type	ISR_UART_rx_handler, %function
  210              	ISR_UART_rx_handler:
  211              	.LFB64:
-  45:main.c        ****     uint8_t bytesToRead = UART_1_GetRxBufferSize();
- 212              		.loc 1 45 0
+  46:main.c        ****     uint8_t bytesToRead = UART_1_GetRxBufferSize();
+ 212              		.loc 1 46 0
  213              		.cfi_startproc
  214              		@ args = 0, pretend = 0, frame = 0
  215              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -347,49 +348,49 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  219              		.cfi_offset 4, -12
  220              		.cfi_offset 5, -8
  221              		.cfi_offset 14, -4
-  46:main.c        ****     while (bytesToRead > 0)
- 222              		.loc 1 46 0
+  47:main.c        ****     while (bytesToRead > 0)
+ 222              		.loc 1 47 0
  223 0002 FFF7FEFF 		bl	UART_1_GetRxBufferSize
  224              	.LVL16:
  225 0006 0446     		mov	r4, r0
  226              	.LVL17:
-  47:main.c        ****     {
- 227              		.loc 1 47 0
+  48:main.c        ****     {
+ 227              		.loc 1 48 0
  228 0008 09E0     		b	.L21
  229              	.L22:
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 7
+
+
  230              	.LBB2:
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 7
-
-
-  49:main.c        ****         UART_1_WriteTxData(byteReceived); // echo back
- 231              		.loc 1 49 0
+  50:main.c        ****         UART_1_WriteTxData(byteReceived); // echo back
+ 231              		.loc 1 50 0
  232 000a FFF7FEFF 		bl	UART_1_ReadRxData
  233              	.LVL18:
  234 000e 0546     		mov	r5, r0
  235              	.LVL19:
-  50:main.c        ****         
- 236              		.loc 1 50 0
+  51:main.c        ****         
+ 236              		.loc 1 51 0
  237 0010 FFF7FEFF 		bl	UART_1_WriteTxData
  238              	.LVL20:
-  52:main.c        ****         
- 239              		.loc 1 52 0
+  53:main.c        ****         
+ 239              		.loc 1 53 0
  240 0014 2846     		mov	r0, r5
  241 0016 FFF7FEFF 		bl	handleByteReceived
  242              	.LVL21:
-  54:main.c        ****     }
- 243              		.loc 1 54 0
+  55:main.c        ****     }
+ 243              		.loc 1 55 0
  244 001a 013C     		subs	r4, r4, #1
  245              	.LVL22:
  246 001c E4B2     		uxtb	r4, r4
  247              	.LVL23:
  248              	.L21:
  249              	.LBE2:
-  47:main.c        ****     {
- 250              		.loc 1 47 0
+  48:main.c        ****     {
+ 250              		.loc 1 48 0
  251 001e 002C     		cmp	r4, #0
  252 0020 F3D1     		bne	.L22
-  56:main.c        **** 
- 253              		.loc 1 56 0
+  57:main.c        **** 
+ 253              		.loc 1 57 0
  254 0022 38BD     		pop	{r3, r4, r5, pc}
  255              		.cfi_endproc
  256              	.LFE64:
@@ -417,10 +418,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  271 0031 000000   		.space	3
  272              	.LC2:
  273 0034 5475726E 		.ascii	"Turn left\015\012\000"
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 8
+
+
  273      206C6566 
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 8
-
-
  273      740D0A00 
  274              	.LC3:
  275 0040 4D696464 		.ascii	"Middle position\015\012\000"
@@ -477,10 +478,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  322 0052 3F       		.byte	0x3f
  323 0053 57000000 		.4byte	0x57
  324 0057 02       		.uleb128 0x2
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 9
+
+
  325 0058 04       		.byte	0x4
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 9
-
-
  326 0059 05       		.byte	0x5
  327 005a 58020000 		.4byte	.LASF6
  328 005e 02       		.uleb128 0x2
@@ -536,11 +537,11 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  378 00ba 05       		.uleb128 0x5
  379 00bb 82010000 		.4byte	.LASF38
  380 00bf 01       		.byte	0x1
- 381 00c0 19       		.byte	0x19
+ 381 00c0 1A       		.byte	0x1a
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 10
+
+
  382 00c1 73000000 		.4byte	0x73
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 10
-
-
  383 00c5 00000000 		.4byte	.LFB63
  384 00c9 24000000 		.4byte	.LFE63-.LFB63
  385 00cd 01       		.uleb128 0x1
@@ -577,7 +578,7 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  416 0110 0A       		.uleb128 0xa
  417 0111 48000000 		.4byte	.LASF18
  418 0115 01       		.byte	0x1
- 419 0116 57       		.byte	0x57
+ 419 0116 58       		.byte	0x58
  420 0117 00000000 		.4byte	.LFB66
  421 011b 0C000000 		.4byte	.LFE66-.LFB66
  422 011f 01       		.uleb128 0x1
@@ -597,10 +598,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  436 0137 0A       		.uleb128 0xa
  437 0138 07020000 		.4byte	.LASF19
  438 013c 01       		.byte	0x1
- 439 013d 5C       		.byte	0x5c
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 11
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 11
 
 
+ 439 013d 5D       		.byte	0x5d
  440 013e 00000000 		.4byte	.LFB67
  441 0142 0C000000 		.4byte	.LFE67-.LFB67
  442 0146 01       		.uleb128 0x1
@@ -620,7 +621,7 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  456 015e 0A       		.uleb128 0xa
  457 015f 9A010000 		.4byte	.LASF20
  458 0163 01       		.byte	0x1
- 459 0164 61       		.byte	0x61
+ 459 0164 62       		.byte	0x62
  460 0165 00000000 		.4byte	.LFB68
  461 0169 0C000000 		.4byte	.LFE68-.LFB68
  462 016d 01       		.uleb128 0x1
@@ -640,7 +641,7 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  476 0185 0B       		.uleb128 0xb
  477 0186 87010000 		.4byte	.LASF21
  478 018a 01       		.byte	0x1
- 479 018b 3A       		.byte	0x3a
+ 479 018b 3B       		.byte	0x3b
  480 018c 00000000 		.4byte	.LFB65
  481 0190 40000000 		.4byte	.LFE65-.LFB65
  482 0194 01       		.uleb128 0x1
@@ -649,7 +650,7 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  485 019a 0C       		.uleb128 0xc
  486 019b 92020000 		.4byte	.LASF24
  487 019f 01       		.byte	0x1
- 488 01a0 3A       		.byte	0x3a
+ 488 01a0 3B       		.byte	0x3b
  489 01a1 81000000 		.4byte	0x81
  490 01a5 00000000 		.4byte	.LLST0
  491 01a9 08       		.uleb128 0x8
@@ -657,10 +658,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  493 01ae 10010000 		.4byte	0x110
  494 01b2 06       		.uleb128 0x6
  495 01b3 18000000 		.4byte	.LVL9
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 12
+
+
  496 01b7 C1020000 		.4byte	0x2c1
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 12
-
-
  497 01bb C9010000 		.4byte	0x1c9
  498 01bf 07       		.uleb128 0x7
  499 01c0 01       		.uleb128 0x1
@@ -700,7 +701,7 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  533 0206 0B       		.uleb128 0xb
  534 0207 07010000 		.4byte	.LASF22
  535 020b 01       		.byte	0x1
- 536 020c 2C       		.byte	0x2c
+ 536 020c 2D       		.byte	0x2d
  537 020d 00000000 		.4byte	.LFB64
  538 0211 24000000 		.4byte	.LFE64-.LFB64
  539 0215 01       		.uleb128 0x1
@@ -709,7 +710,7 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  542 021b 0D       		.uleb128 0xd
  543 021c 59000000 		.4byte	.LASF23
  544 0220 01       		.byte	0x1
- 545 0221 2E       		.byte	0x2e
+ 545 0221 2F       		.byte	0x2f
  546 0222 81000000 		.4byte	0x81
  547 0226 53000000 		.4byte	.LLST1
  548 022a 0E       		.uleb128 0xe
@@ -717,12 +718,12 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  550 022f 14000000 		.4byte	.LBE2-.LBB2
  551 0233 74020000 		.4byte	0x274
  552 0237 0D       		.uleb128 0xd
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 13
+
+
  553 0238 92020000 		.4byte	.LASF24
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 13
-
-
  554 023c 01       		.byte	0x1
- 555 023d 31       		.byte	0x31
+ 555 023d 32       		.byte	0x32
  556 023e 81000000 		.4byte	0x81
  557 0242 71000000 		.4byte	.LLST2
  558 0246 08       		.uleb128 0x8
@@ -764,7 +765,7 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  594 028f 11       		.uleb128 0x11
  595 0290 79020000 		.4byte	.LASF26
  596 0294 01       		.byte	0x1
- 597 0295 17       		.byte	0x17
+ 597 0295 18       		.byte	0x18
  598 0296 81000000 		.4byte	0x81
  599 029a 05       		.uleb128 0x5
  600 029b 03       		.byte	0x3
@@ -777,10 +778,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  607 02ab 12       		.uleb128 0x12
  608 02ac 14000000 		.4byte	.LASF28
  609 02b0 14000000 		.4byte	.LASF28
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 14
+
+
  610 02b4 06       		.byte	0x6
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 14
-
-
  611 02b5 54       		.byte	0x54
  612 02b6 12       		.uleb128 0x12
  613 02b7 3F010000 		.4byte	.LASF29
@@ -837,10 +838,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  664 0013 02       		.uleb128 0x2
  665 0014 24       		.uleb128 0x24
  666 0015 00       		.byte	0
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 15
+
+
  667 0016 0B       		.uleb128 0xb
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 15
-
-
  668 0017 0B       		.uleb128 0xb
  669 0018 3E       		.uleb128 0x3e
  670 0019 0B       		.uleb128 0xb
@@ -897,10 +898,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  721 004d 18       		.uleb128 0x18
  722 004e 9742     		.uleb128 0x2117
  723 0050 19       		.uleb128 0x19
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 16
+
+
  724 0051 01       		.uleb128 0x1
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 16
-
-
  725 0052 13       		.uleb128 0x13
  726 0053 00       		.byte	0
  727 0054 00       		.byte	0
@@ -957,10 +958,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  778 0090 01       		.uleb128 0x1
  779 0091 12       		.uleb128 0x12
  780 0092 06       		.uleb128 0x6
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 17
+
+
  781 0093 40       		.uleb128 0x40
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 17
-
-
  782 0094 18       		.uleb128 0x18
  783 0095 9742     		.uleb128 0x2117
  784 0097 19       		.uleb128 0x19
@@ -1017,10 +1018,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  835 00cb 0B       		.uleb128 0xb
  836 00cc 3B       		.uleb128 0x3b
  837 00cd 0B       		.uleb128 0xb
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 18
+
+
  838 00ce 49       		.uleb128 0x49
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 18
-
-
  839 00cf 13       		.uleb128 0x13
  840 00d0 02       		.uleb128 0x2
  841 00d1 17       		.uleb128 0x17
@@ -1077,10 +1078,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  892 0104 02       		.uleb128 0x2
  893 0105 18       		.uleb128 0x18
  894 0106 00       		.byte	0
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 19
+
+
  895 0107 00       		.byte	0
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 19
-
-
  896 0108 12       		.uleb128 0x12
  897 0109 2E       		.uleb128 0x2e
  898 010a 00       		.byte	0
@@ -1137,10 +1138,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  949 004a 9F       		.byte	0x9f
  950 004b 00000000 		.4byte	0
  951 004f 00000000 		.4byte	0
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 20
+
+
  952              	.LLST1:
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 20
-
-
  953 0053 08000000 		.4byte	.LVL17
  954 0057 1C000000 		.4byte	.LVL22
  955 005b 0100     		.2byte	0x1
@@ -1197,10 +1198,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  1006 0030 00000000 		.4byte	0
  1007 0034 00000000 		.4byte	0
  1008              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 21
+
+
  1009              	.Ldebug_line0:
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 21
-
-
  1010 0000 E7010000 		.section	.debug_str,"MS",%progbits,1
  1010      02006701 
  1010      00000201 
@@ -1257,10 +1258,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  1032      31203230 
  1032      31363036 
  1033 00ac 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 22
+
+
  1033      20726576 
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 22
-
-
  1033      6973696F 
  1033      6E203233 
  1033      37373135 
@@ -1317,10 +1318,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  1052      74655265 
  1052      63656976 
  1052      656400
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 23
+
+
  1053              	.LASF20:
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 23
-
-
  1054 019a 6D696464 		.ascii	"middlePos\000"
  1054      6C65506F 
  1054      7300
@@ -1377,10 +1378,10 @@ ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 1
  1077      00
  1078              	.LASF2:
  1079 024e 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\cc9tTJQh.s 			page 24
+
+
  1079      7420696E 
-ARM GAS  C:\Users\KRISTI~1\AppData\Local\Temp\ccGVv6IU.s 			page 24
-
-
  1079      7400
  1080              	.LASF6:
  1081 0258 6C6F6E67 		.ascii	"long int\000"

@@ -1,5 +1,5 @@
 -- Project:   ServoTest
--- Generated: 11/20/2020 12:26:36
+-- Generated: 12/17/2020 11:06:54
 -- PSoC Creator  4.3
 
 ENTITY ServoTest IS
@@ -124,7 +124,7 @@ ARCHITECTURE __DEFAULT__ OF ServoTest IS
     ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF Tx_1(0) : LABEL IS "P12[7]";
     ATTRIBUTE lib_model OF Pin_PWM(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF Pin_PWM(0) : LABEL IS "P1[6]";
+    ATTRIBUTE Location OF Pin_PWM(0) : LABEL IS "P2[2]";
     ATTRIBUTE lib_model OF Net_2 : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF \UART_1:BUART:counter_load_not\ : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_0\ : LABEL IS "macrocell3";
